@@ -28,9 +28,7 @@ async function fetchVoteAccounts(
 
         setVoteAccounts(voteAccounts);
     } catch (error) {
-        if (cluster !== Cluster.Custom) {
-            console.error(error, { url });
-        }
+        console.error(error, { url });
     }
 }
 
