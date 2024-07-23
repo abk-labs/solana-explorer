@@ -1,7 +1,6 @@
 'use client';
 
 import { useCluster } from '@providers/cluster';
-import { Cluster } from '@utils/cluster';
 import React from 'react';
 import useTabVisibility from 'use-tab-visibility';
 import { createSolanaRpc } from 'web3js-experimental';
@@ -113,9 +112,6 @@ export function SolanaClusterStatsProvider({ children }: Props) {
                     type: DashboardInfoActionType.SetPerfSamples,
                 });
             } catch (error) {
-                if (cluster !== Cluster.Custom) {
-                    console.error(error, { url });
-                }
                 if (error instanceof Error) {
                     dispatchPerformanceInfo({
                         data: error.toString(),
@@ -141,9 +137,6 @@ export function SolanaClusterStatsProvider({ children }: Props) {
                     type: PerformanceInfoActionType.SetTransactionCount,
                 });
             } catch (error) {
-                if (cluster !== Cluster.Custom) {
-                    console.error(error, { url });
-                }
                 if (error instanceof Error) {
                     dispatchPerformanceInfo({
                         data: error.toString(),
@@ -175,9 +168,6 @@ export function SolanaClusterStatsProvider({ children }: Props) {
                     type: DashboardInfoActionType.SetEpochInfo,
                 });
             } catch (error) {
-                if (cluster !== Cluster.Custom) {
-                    console.error(error, { url });
-                }
                 if (error instanceof Error) {
                     dispatchDashboardInfo({
                         data: error.toString(),
