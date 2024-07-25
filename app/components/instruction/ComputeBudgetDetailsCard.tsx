@@ -67,7 +67,7 @@ export function ComputeBudgetDetailsCard({
                         </tr>
 
                         <tr>
-                            <td>Additional Fee (SOL)</td>
+                            <td>Additional Fee (ZUMA)</td>
                             <td className="text-lg-end">
                                 <SolBalance lamports={additionalFee} />
                             </td>
