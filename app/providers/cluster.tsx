@@ -90,9 +90,9 @@ async function updateCluster(dispatch: Dispatch, lookup: string) {
     });
 
     try {
-        const transportUrl = cluster.uri;
-        const transport = createDefaultRpcTransport({ url: transportUrl });
-        const rpc = createSolanaRpc({ transport });
+        const url = cluster.uri;
+        new URL(url);
+        const rpc = createSolanaRpc(url);
 
         const [firstAvailableBlock, epochSchedule, epochInfo] = await Promise.all([
             rpc.getFirstAvailableBlock().send(),
