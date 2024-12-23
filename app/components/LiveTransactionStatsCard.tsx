@@ -10,8 +10,6 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import CountUp from 'react-countup';
 
-import explorer from '@/explorer.config';
-
 Chart.register(BarElement, CategoryScale, LinearScale, Tooltip);
 
 type Series = 'short' | 'medium' | 'long';
