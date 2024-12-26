@@ -1,7 +1,7 @@
 'use client';
 
-import { ParsedAccountRenderer } from '@components/account/ParsedAccountRenderer';
 import React from 'react';
+import { ParsedAccountRenderer } from '@components/account/ParsedAccountRenderer';
 
 import { ProgramMultisigCard } from '@/app/components/account/ProgramMultisigCard';
 

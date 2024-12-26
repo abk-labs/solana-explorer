@@ -1,10 +1,10 @@
+import React, { useState } from 'react';
 import { Address } from '@components/common/Address';
 import { BalanceDelta } from '@components/common/BalanceDelta';
 import { useTransactionDetails } from '@providers/transactions';
 import { ParsedMessageAccount, PublicKey, TokenAmount, TokenBalance } from '@solana/web3.js';
 import { SignatureProps } from '@utils/index';
 import { BigNumber } from 'bignumber.js';
-import React, { useState } from 'react';
 import useAsyncEffect from 'use-async-effect';
 
 import { useCluster } from '@/app/providers/cluster';

@@ -1,9 +1,10 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { SolBalance } from '@components/common/SolBalance';
 import { ParsedInstruction, SignatureResult, SystemProgram } from '@solana/web3.js';
-import React from 'react';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { WithdrawNonceInfo } from './types';
 
 export function NonceWithdrawDetailsCard(props: {

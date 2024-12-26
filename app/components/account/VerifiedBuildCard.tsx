@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { ExternalLink } from 'react-feather';
 
 import { OsecRegistryInfo, useVerifiedProgram, VerificationStatus } from '@/app/utils/verified-builds';
-
 import { Address } from '../common/Address';
 import { Copyable } from '../common/Copyable';
 import { LoadingCard } from '../common/LoadingCard';

@@ -1,5 +1,6 @@
 'use client';
 
+import React, { PropsWithChildren } from 'react';
 import { Address } from '@components/common/Address';
 import { Epoch } from '@components/common/Epoch';
 import { ErrorCard } from '@components/common/ErrorCard';
@@ -13,7 +14,6 @@ import { displayTimestamp, displayTimestampUtc } from '@utils/date';
 import { useClusterPath } from '@utils/url';
 import Link from 'next/link';
 import { notFound, useSelectedLayoutSegment } from 'next/navigation';
-import React, { PropsWithChildren } from 'react';
 
 import { getEpochForSlot } from '@/app/utils/epoch-schedule';
 

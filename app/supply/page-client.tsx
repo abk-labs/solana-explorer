@@ -1,9 +1,9 @@
 'use client';
 
+import React from 'react';
 import { SupplyCard } from '@components/SupplyCard';
 import { TopAccountsCard } from '@components/TopAccountsCard';
 import { useCluster } from '@providers/cluster';
-import React from 'react';
 import { ClusterType } from '@utils/clusterTypes';
 
 export default function SupplyPageClient() {

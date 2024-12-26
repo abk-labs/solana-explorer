@@ -1,7 +1,7 @@
+import React from 'react';
 import { Epoch } from '@components/common/Epoch';
 import { SolBalance } from '@components/common/SolBalance';
 import { StakeHistoryEntry, StakeHistoryInfo, SysvarAccount } from '@validators/accounts/sysvar';
-import React from 'react';
 
 export function StakeHistoryCard({ sysvarAccount }: { sysvarAccount: SysvarAccount }) {
     const stakeHistory = sysvarAccount.info as StakeHistoryInfo;

@@ -1,9 +1,9 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { getFilteredProgramAccounts, NAME_PROGRAM_ID, performReverseLookup } from '@bonfida/spl-name-service';
 import { useCluster } from '@providers/cluster';
 import { Connection, PublicKey } from '@solana/web3.js';
-import { useEffect, useState } from 'react';
 import { ClusterType } from '@utils/clusterTypes';
 
 import { DomainInfo, SOL_TLD_AUTHORITY } from './domain-info';

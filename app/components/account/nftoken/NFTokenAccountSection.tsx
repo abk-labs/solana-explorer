@@ -1,11 +1,12 @@
+import { Suspense, useState } from 'react';
 import { Address } from '@components/common/Address';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { Account, useFetchAccountInfo } from '@providers/accounts';
 import { PublicKey } from '@solana/web3.js';
-import { Suspense, useState } from 'react';
 import { RefreshCw } from 'react-feather';
 
 import { UnknownAccountCard } from '../UnknownAccountCard';
+
 import { parseNFTokenCollectionAccount, parseNFTokenNFTAccount } from './isNFTokenAccount';
 import { useCollectionNfts } from './nftoken-hooks';
 import { NftokenTypes } from './nftoken-types';

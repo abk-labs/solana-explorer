@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import * as Cache from '@providers/cache';
 import { ActionType, FetchStatus } from '@providers/cache';
 import { useCluster } from '@providers/cluster';
@@ -11,7 +12,6 @@ import {
     TransactionSignature,
 } from '@solana/web3.js';
 import { Cluster } from '@utils/cluster';
-import React from 'react';
 
 const MAX_TRANSACTION_BATCH_SIZE = 10;
 

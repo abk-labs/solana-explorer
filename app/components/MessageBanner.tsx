@@ -1,9 +1,9 @@
 'use client';
 
+import React from 'react';
 import { useCluster } from '@providers/cluster';
 import { ClusterType } from '@utils/clusterTypes';
 import { displayTimestamp } from '@utils/date';
-import React from 'react';
 import { AlertCircle } from 'react-feather';
 
 type Announcement = {
