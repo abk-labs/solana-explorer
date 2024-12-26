@@ -23,7 +23,8 @@ import {
 } from '@providers/transactions';
 import { useFetchTransactionDetails } from '@providers/transactions/parsed';
 import { ParsedTransaction, SystemInstruction, SystemProgram, TransactionSignature } from '@solana/web3.js';
-import { ClusterStatus, SolanaCluster } from '@utils/cluster';
+import { ClusterStatus } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import { displayTimestamp } from '@utils/date';
 import { SignatureProps } from '@utils/index';
 import { getTransactionInstructionError } from '@utils/program-err';
@@ -212,11 +213,11 @@ function StatusCard({ signature, autoRefresh }: SignatureProps & AutoRefreshProp
         const err = getTransactionErrorReason(info, transaction);
         errorReason = err.errorReason;
         if (err.errorLink !== undefined) {
-            if (cluster.cluster === SolanaCluster.MainnetBeta) {
+            if (cluster.cluster === ClusterType.MainnetBeta) {
                 errorLink = err.errorLink;
             } else {
                 errorLink = `${err.errorLink}?cluster=${clusterName.toLowerCase()}${
-                    cluster.cluster === SolanaCluster.Custom ? `&customUrl=${clusterUrl}` : ''
+                    cluster.cluster === ClusterType.Custom ? `&customUrl=${clusterUrl}` : ''
                 }`;
             }
         }

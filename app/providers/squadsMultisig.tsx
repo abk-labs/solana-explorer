@@ -1,6 +1,7 @@
 import { Program } from '@coral-xyz/anchor';
 import { PublicKey } from '@solana/web3.js';
 import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import useSWRImmutable from 'swr/immutable';
 
 export const SQUADS_V3_ADDRESS = 'SMPLecH534NA9acpos4G6x7uf3LWbCAwZQE9e8ZekMu';
@@ -23,7 +24,7 @@ export function useSquadsMultisigLookup(programAuthority: PublicKey | null | und
     return useSWRImmutable<SquadsMultisigMapInfo | null>(
         ['squadsReverseMap', programAuthority?.toString(), cluster],
         async ([_prefix, programIdString, cluster]: [string, string | undefined, Cluster]) => {
-            if (cluster !== Cluster.MainnetBeta || !programIdString) {
+            if (cluster.cluster !== ClusterType.MainnetBeta || !programIdString) {
                 return null;
             }
             const response = await fetch(`${SQUADS_MAP_URL}/${programIdString}`);
@@ -43,7 +44,7 @@ export function useSquadsMultisig(
     return useSWRImmutable<MinimalMultisigInfo | null>(
         ['squadsMultisig', multisig, cluster],
         async ([_prefix, multisig, cluster]: [string, string | undefined, Cluster]) => {
-            if (cluster !== Cluster.MainnetBeta || !multisig || !version) {
+            if (cluster.name !== 'mainnet' || !multisig || !version) {
                 return null;
             }
             if (version === 'v4') {
