@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useCluster } from '@providers/cluster';
-import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import { displayTimestamp } from '@utils/date';
 import { AlertCircle } from 'react-feather';
 
@@ -13,7 +13,7 @@ type Announcement = {
     end?: Date;
 };
 
-const announcements = new Map<Cluster, Announcement>();
+const announcements = new Map<ClusterType, Announcement>();
 // announcements.set(Cluster.Devnet, {
 //     message: 'Devnet API node is restarting',
 //     start: new Date('July 25, 2020 18:00:00 GMT+8:00'),
@@ -30,8 +30,8 @@ const announcements = new Map<Cluster, Announcement>();
 // });
 
 export function MessageBanner() {
-    const cluster = useCluster().cluster;
-    const announcement = announcements.get(cluster);
+    const { cluster } = useCluster();
+    const announcement = announcements.get(cluster.cluster);
     if (!announcement) return null;
     const { message, start, end, estimate } = announcement;
 

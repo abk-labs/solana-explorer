@@ -1,4 +1,4 @@
-import { SolanaCluster } from './cluster';
+import { ClusterType } from '@utils/clusterTypes';
 
 export enum PROGRAM_NAMES {
     // native built-ins
@@ -113,63 +113,63 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
         name: PROGRAM_NAMES.SYSTEM,
     },
     '22Y43yTVxuUkoRKdm9thyRhQ3SdgQS7c7kB6UNCiaczD': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SERUM_SWAP,
     },
     '27haf8L6oxUeXrHrgEgsexjSY5hbVUWEmvv9Nyxg8vQv': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.RAYDIUM_LP_2,
     },
     '2rHhojZ7hpu1zA91nvZmT8TqWWvMcKmmNBCr2mKTtMq4': {
-        deployments: [SolanaCluster.Devnet],
+        deployments: [ClusterType.Devnet],
         name: PROGRAM_NAMES.WORMHOLE_NFT,
     },
     '3XXuUFfweXBwFgFfYaejLvZE4cGZiHgKiGfMtdxNzYmv': {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet],
         name: PROGRAM_NAMES.CLOCKWORK_1,
     },
     '3u8hJUVTA4jH1wYAyUur7FFZVQ8H635K3tSHHF4ssjQ5': {
-        deployments: [SolanaCluster.Devnet],
+        deployments: [ClusterType.Devnet],
         name: PROGRAM_NAMES.WORMHOLE_CORE,
     },
     '5ZfZAwP2m93waazg8DkrrVmsupeiPEvaEHowiUP7UAbJ': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SOLANART_GO,
     },
     '5fNfvyp5czQVX77yoACa3JJVEhdRaWjPuazuWgjhTqEH': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.MANGO_2,
     },
     '675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.RAYDIUM_AMM,
     },
     '7sPptkymzvayoSbLXzBsXEF8TSf3typNnAWkrKrDizNb': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.MANGO_ICO,
     },
     '82yxjeMsvaURa4MbZZ7WZZHfobirZYkH1zF8fmeGtyaQ': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.ORCA_AQUAFARM,
     },
     '8tfDNiaEyrV6Q1U4DEXrEigs9DoDtkugzFbybENEbCDz': {
-        deployments: [SolanaCluster.Testnet],
+        deployments: [ClusterType.Testnet],
         name: PROGRAM_NAMES.PYTH_TESTNET,
     },
     '9HzJyW1qZsEiSfMUf6L2jo3CcTKAyBmSyKdwQeYisHrC': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.RAYDIUM_IDO,
     },
     '9W959DqEETiGZocYWCQPaJ6sBmUzgfxXfqGeTEdp3aQP': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.ORCA_SWAP_2,
     },
     '9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin': {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SERUM_3,
     },
     A5JxZVHgXe7fn5TqJXm6Hj2zKh1ptDapae2YjtXbZJoy: {
-        deployments: [SolanaCluster.Devnet, SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.Devnet, ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.FINTERNET_TOKEN_MANAGER,
     },
     // spl
@@ -181,28 +181,28 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
         name: PROGRAM_NAMES.ADDRESS_LOOKUP_TABLE,
     },
     BJ3jrUzddfuSrZHXSCxMUUQsjKEyLmuuyZebkcaFp2fg: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SERUM_1,
     },
     BrEAK7zGZ6dM71zUDACDqJnekihmwF15noTddWTsknjC: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.BREAK_SOLANA,
     },
     // other
     C64kTdg1Hzv5KoQmZrQRcm2Qz7PkxtFBgw7EpFhvYn8W: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.ACUMEN,
     },
     CJsLwbP1iu5DuUikHEJnLfANgKy6stB2uFgvBBHoyxwz: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SOLANART,
     },
     CLoCKyJ6DXBJqqu2VWx9RLbgnwwR6BMHHuyasVmfMzBh: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet],
         name: PROGRAM_NAMES.CLOCKWORK_2,
     },
     CmFuqQTLs2nQof5uaktJn1a6k2VdbGmZPfrJufB2Vm3F: {
-        deployments: [SolanaCluster.Devnet, SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.Devnet, ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.FINTERNET_USER_MANAGER,
     },
     ComputeBudget111111111111111111111111111111: {
@@ -212,72 +212,72 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
         name: PROGRAM_NAMES.CONFIG,
     },
     CrX7kMhLC3cSsXJdT7JDgqrRVWGnUpX3gfEfxxU2NVLi: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SOLIDO,
     },
     Crt7UoUR6QgrFrN7j8rmSQpUTNWNSitSwWvsWGf1qZ5t: {
-        deployments: [SolanaCluster.Devnet, SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.Devnet, ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SABER_ROUTER,
     },
     DZnkkTmCiFWfYTfT41X3Rd1kDgozqzxWaHqsw6W4x2oe: {
-        deployments: [SolanaCluster.Devnet],
+        deployments: [ClusterType.Devnet],
         name: PROGRAM_NAMES.WORMHOLE_TOKEN,
     },
     DjVE6JNiYqPL2QXyCUUh8rNjHrbz9hXHNYt99MQ59qw1: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.ORCA_SWAP_1,
     },
     Dooar9JkhdZ7J3LHN3A7YCuoGRUggXhQaG4kijfLGU2j: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.STEPN_DEX,
     },
     DtmE9D2CSB4L5D6A15mraeEjrGMm6auWVzgaD8hK2tZM: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SWITCHBOARD,
     },
     EUqojwWA2rd19FZrzeBncJsm38Jm1hEhE3zsmX3bRc2o: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SERUM_2,
     },
     Ed25519SigVerify111111111111111111111111111: {
         name: PROGRAM_NAMES.ED25519,
     },
     EhhTKczWMGQt46ynNeRX1WfeagwwJd7ufHvCDjRxjo5Q: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.RAYDIUM_STAKING,
     },
     Feat1YXHhH6t1juaWF74WLcfv4XoNocjXA6sPWHNgAse: {
         name: PROGRAM_NAMES.FEATURE_PROPOSAL,
     },
     FsJ3A3u2vn5cTVofAjvy6y5kwABJAqYWpe4975bi2epH: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.PYTH_MAINNET,
     },
     GqTPL6qRf5aUuqscLh8Rg2HTxPUXfhhAXDptTLhp1t2J: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.MANGO_GOVERNANCE,
     },
     HEvSKofvBgfaexv23kMabbYqxasxU3mQ4ibBMEmJWHny: {
-        deployments: [SolanaCluster.Devnet, SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.Devnet, ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.CHAINLINK_STORE,
     },
     JD3bq9hGdy38PuWQ4h2YJpELmHVGPPfFSuFkpzAd9zfu: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.MANGO_1,
     },
     KeccakSecp256k11111111111111111111111111111: {
         name: PROGRAM_NAMES.SECP256K1,
     },
     LendZqTs7gn5CTSJU1jWKhKuVpjJGom45nnwPb2AMTi: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.LENDING,
     },
     MERLuDFBMmsHnsBPZw2sDQZHvXFMwp8EdjudcU2HKky: {
-        deployments: [SolanaCluster.Devnet, SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.Devnet, ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.MERCURIAL,
     },
     MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.MARINADE,
     },
     Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo: {
@@ -287,11 +287,11 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
         name: PROGRAM_NAMES.MEMO,
     },
     Port7uDYB3wk6GJAw4KT1WpTeMtSu9bTcChBHkX2LfR: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.PORT,
     },
     QMMD16kjauP5knBwxNUJRZ1Z5o3deBuFrqVjBVmmqto: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.QUARRY_MERGE_MINE,
     },
     QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB: {
@@ -307,38 +307,38 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
         name: PROGRAM_NAMES.QUARRY_REGISTRY,
     },
     RVKd61ztZW9GUwhRbbLoYVRE5Xf1B2tVscKqwZqXgEr: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.RAYDIUM_LP_1,
     },
     SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.STAKE_POOL,
     },
     SSwpMgqNDsyV7mAgN9ady4bDVu5ySjmmXejXvy2vLt1: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.STEP_SWAP,
     },
     SSwpkEEcbUqx4vtoEByFjSkhKdCT862DNVb52nZg1UZ: {
-        deployments: [SolanaCluster.Devnet, SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.Devnet, ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SABER_SWAP,
     },
     SWiMDJYFUGj6cPrQ6QYYYWZtvXQdRChSVAygDZDsCHC: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SWIM_SWAP,
     },
     So1endDq2YkqhipRh3WViPa8hdiSpxWy6z3Z6tMCpAo: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SOLEND,
     },
     Stake11111111111111111111111111111111111111: {
         name: PROGRAM_NAMES.STAKE,
     },
     SwaPpA9LAaLfeLi3a68M4DjnLqgtticKg6CnyNwgAC8: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.SWAP,
     },
     SySTEM1eSU2p4BGQfQpimFEWWSC1XDFeun3Nqzz3rT7: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet],
         name: PROGRAM_NAMES.ZK_LIGHT_SYSTEM_PROGRAM,
     },
     TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA: {
@@ -351,83 +351,83 @@ export const PROGRAM_INFO_BY_ID: { [address: string]: ProgramInfo } = {
         name: PROGRAM_NAMES.VOTE,
     },
     WnFt12ZrnzZrFZkt2xsNsaNWoQribnuQ5B5FrDbwDhD: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.WORMHOLE_NFT,
     },
     WormT3McKhFJ2RkiGpdw9GKvNCrB2aB54gb2uV9MfQC: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.WORMHOLE,
     },
     WvmTNLpGMVbwJVYztYL4Hnsy82cJhQorxjnnXcRm3b6: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.SERUM_POOL,
     },
     auctxRXPeJoc4817jDhf4HbjnhEcr1cCXenosMhK5R8: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.NFT_AUCTION,
     },
     cTokenmWW8bLPjZEBAUgYy3zKxQZW6VKi7bqNFEVv3m: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet],
         name: PROGRAM_NAMES.ZK_COMPRESSED_TOKEN_PROGRAM,
     },
     cjg3oHmg9uuPsP8D6g29NWvhySJkdYdAo9D25PRbKXJ: {
-        deployments: [SolanaCluster.Devnet, SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.Devnet, ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.CHAINLINK_ORACLE,
     },
     cmtDvXumGCrqC1Age74AVPhSRVXJMd8PJS91L8KbNCK: {
-        deployments: [SolanaCluster.Devnet, SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.Devnet, ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.ACCOUNT_COMPRESSION,
     },
     cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.NFT_CANDY_MACHINE_V2,
     },
     cndyAnrLdpjq1Ssp1z8xxDsB8dxe7u4HL5Nxi2K5WXZ: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.NFT_CANDY_MACHINE,
     },
     compr6CUsB5m2jS4Y3831ztGSTnDpnKJTKS95d64XVq: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet],
         name: PROGRAM_NAMES.ZK_ACCOUNT_COMPRESSION_PROGRAM,
     },
     gSbePebfvPy7tRqimPoVecS2UsBvYv46ynrzWocc92s: {
-        deployments: [SolanaCluster.Devnet],
+        deployments: [ClusterType.Devnet],
         name: PROGRAM_NAMES.PYTH_DEVNET,
     },
     metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.TOKEN_METADATA,
     },
     mv3ekLzLbnVPNxjSKvqBpU3ZeZXPQdEC3bp5MDEBG68: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.MANGO_3,
     },
     namesLPneVptA9Z5rqUDD9tMTWEJwofgaYwp8cawRkX: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.NAME,
     },
     oreV2ZymfyeXgNgBdqMkumTqqAprVqgBWQfoYkrtKWQ: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.ORE,
     },
     p1exdMJcjVao65QdewkaZRUnU6VPSXhus9n2GzWfh98: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.METAPLEX,
     },
     srmqPvymJeFKQ4zGQed1GFppgkRHL9kaELCbyksJtPX: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.OPENBOOK_DEX,
     },
     vau1zxA2LbssAUEF7Gpw91zMM1LvXrvpzJtmZ58rPsn: {
-        deployments: [SolanaCluster.MainnetBeta, SolanaCluster.Devnet, SolanaCluster.Testnet],
+        deployments: [ClusterType.MainnetBeta, ClusterType.Devnet, ClusterType.Testnet],
         name: PROGRAM_NAMES.TOKEN_VAULT,
     },
     worm2ZoG2kUd4vFXhvjh93UUH596ayRfgQ2MgjNMTth: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.WORMHOLE_CORE,
     },
     wormDTUJ6AWPNvk59vGQbDvGJmqbDTdgWgAqcLBCgUb: {
-        deployments: [SolanaCluster.MainnetBeta],
+        deployments: [ClusterType.MainnetBeta],
         name: PROGRAM_NAMES.WORMHOLE_TOKEN,
     },
 };

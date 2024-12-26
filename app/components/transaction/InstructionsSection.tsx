@@ -37,7 +37,7 @@ import {
     SignatureResult,
     TransactionSignature,
 } from '@solana/web3.js';
-import { SolanaCluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import { INNER_INSTRUCTIONS_START_SLOT, SignatureProps } from '@utils/index';
 import { intoTransactionInstruction } from '@utils/tx';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -78,7 +78,7 @@ export function InstructionsSection({ signature }: SignatureProps) {
 
     if (
         meta?.innerInstructions &&
-        (cluster.cluster !== SolanaCluster.MainnetBeta || transactionWithMeta.slot >= INNER_INSTRUCTIONS_START_SLOT)
+        (cluster.cluster !== ClusterType.MainnetBeta || transactionWithMeta.slot >= INNER_INSTRUCTIONS_START_SLOT)
     ) {
         meta.innerInstructions.forEach((parsed: ParsedInnerInstruction) => {
             if (!innerInstructions[parsed.index]) {

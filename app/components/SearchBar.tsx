@@ -2,7 +2,8 @@
 
 import React, { useId } from 'react';
 import { useCluster } from '@providers/cluster';
-import { Cluster, SolanaCluster } from '@utils/cluster';
+import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import bs58 from 'bs58';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Search } from 'react-feather';
@@ -56,7 +57,7 @@ export function SearchBar() {
         }
         const tokenOptionsAppendable = tokenOptions ? [tokenOptions] : [];
         const domainOptions =
-            hasDomainSyntax(search) && cluster.cluster === SolanaCluster.MainnetBeta
+            hasDomainSyntax(search) && cluster.cluster === ClusterType.MainnetBeta
                 ? (await buildDomainOptions(search)) ?? []
                 : [];
 

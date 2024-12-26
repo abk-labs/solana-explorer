@@ -1,8 +1,8 @@
 import React from 'react';
+import { ClusterType } from '@utils/clusterTypes';
 import useTabVisibility from 'use-tab-visibility';
 
 import { useCluster } from '../providers/cluster';
-import { SolanaCluster } from './cluster';
 
 const PRICE_REFRESH = 10000;
 
@@ -56,7 +56,7 @@ export function useCoinGecko(coinId?: string): CoinGeckoResult | undefined {
         if (!isTabVisible) {
             return;
         }
-        if (cluster.cluster !== SolanaCluster.MainnetBeta) {
+        if (cluster.cluster !== ClusterType.MainnetBeta) {
             return;
         }
         let interval: NodeJS.Timeout | undefined;

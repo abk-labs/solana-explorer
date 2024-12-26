@@ -6,11 +6,12 @@ import * as Cache from '@providers/cache';
 import { FetchStatus } from '@providers/cache';
 import { useCluster } from '@providers/cluster';
 import { Connection, InflationReward, PublicKey } from '@solana/web3.js';
-import { Cluster, SolanaCluster } from '@utils/cluster';
+import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 
-const REWARDS_AVAILABLE_EPOCH = new Map<SolanaCluster, number>([
-    [SolanaCluster.MainnetBeta, 132],
-    [SolanaCluster.Testnet, 43],
+const REWARDS_AVAILABLE_EPOCH = new Map<ClusterType, number>([
+    [ClusterType.MainnetBeta, 132],
+    [ClusterType.Testnet, 43],
 ]);
 
 const PAGE_SIZE = 15;
@@ -84,7 +85,7 @@ async function fetchRewards(
         url,
     });
 
-    const lowestAvailableEpoch = REWARDS_AVAILABLE_EPOCH.get(cluster.cluster as SolanaCluster) || 0;
+    const lowestAvailableEpoch = REWARDS_AVAILABLE_EPOCH.get(cluster.cluster as ClusterType) || 0;
     const connection = new Connection(url);
 
     if (!fromEpoch) {

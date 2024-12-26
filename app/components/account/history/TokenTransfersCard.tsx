@@ -11,7 +11,8 @@ import { useFetchAccountHistory } from '@providers/accounts/history';
 import { FetchStatus } from '@providers/cache';
 import { useCluster } from '@providers/cluster';
 import { ParsedInstruction, ParsedTransactionWithMeta, PartiallyDecodedInstruction, PublicKey } from '@solana/web3.js';
-import { Cluster, SolanaCluster } from '@utils/cluster';
+import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import { normalizeTokenAmount } from '@utils/index';
 import { InstructionContainer } from '@utils/instruction';
 import Moment from 'react-moment';
@@ -229,7 +230,7 @@ function getTransfer(
                 return create(instruction.parsed.info, Transfer);
             }
         } catch (error) {
-            if (cluster.cluster === SolanaCluster.MainnetBeta) {
+            if (cluster.cluster === ClusterType.MainnetBeta) {
                 console.error(error, {
                     signature,
                 });

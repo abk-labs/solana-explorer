@@ -4,19 +4,22 @@ import { Connection } from '@solana/web3.js';
 import pLimit from 'p-limit';
 
 import { useCluster } from '../providers/cluster';
-import { Cluster } from './cluster';
+
+import { ClusterType } from './clusterTypes';
 import { DomainInfo } from './domain-info';
 
 
 export const useUserANSDomains = (userAddress: string): [DomainInfo[] | null, boolean] => {
-    const { url, cluster } = useCluster();
+    const { cluster, url } = useCluster();
     const [result, setResult] = useState<DomainInfo[] | null>(null);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const resolve = async () => {
             // Allow only mainnet and custom
-            if (![Cluster.MainnetBeta, Cluster.Custom].includes(cluster)) return;
+            if (cluster.cluster !== ClusterType.MainnetBeta && cluster.cluster !== ClusterType.Custom) {
+                return;
+            }
             const connection = new Connection(url, 'confirmed');
             try {
                 setLoading(true);
