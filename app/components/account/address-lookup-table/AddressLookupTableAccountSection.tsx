@@ -1,3 +1,4 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { Slot } from '@components/common/Slot';
 import { SolBalance } from '@components/common/SolBalance';
@@ -5,7 +6,6 @@ import { TableCardBody } from '@components/common/TableCardBody';
 import { Account, useFetchAccountInfo } from '@providers/accounts';
 import { AddressLookupTableAccount } from '@solana/web3.js';
 import { AddressLookupTableAccountInfo } from '@validators/accounts/address-lookup-table';
-import React from 'react';
 import { RefreshCw } from 'react-feather';
 
 export function AddressLookupTableAccountSection(

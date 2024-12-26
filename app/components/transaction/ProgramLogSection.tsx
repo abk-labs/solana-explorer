@@ -1,10 +1,10 @@
+import React from 'react';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { ProgramLogsCardBody } from '@components/ProgramLogsCardBody';
 import { useCluster } from '@providers/cluster';
 import { useTransactionDetails } from '@providers/transactions';
 import { SignatureProps } from '@utils/index';
 import { parseProgramLogs } from '@utils/program-logs';
-import React from 'react';
 import { Code } from 'react-feather';
 
 export function ProgramLogSection({ signature }: SignatureProps) {

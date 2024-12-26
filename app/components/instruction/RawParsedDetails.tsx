@@ -1,5 +1,5 @@
-import { ParsedInstruction } from '@solana/web3.js';
 import React from 'react';
+import { ParsedInstruction } from '@solana/web3.js';
 
 export function RawParsedDetails({ ix, children }: { ix: ParsedInstruction; children?: React.ReactNode }) {
     return (

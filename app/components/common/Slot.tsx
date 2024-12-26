@@ -1,6 +1,6 @@
+import React from 'react';
 import { useClusterPath } from '@utils/url';
 import Link from 'next/link';
-import React from 'react';
 
 import { Copyable } from './Copyable';
 

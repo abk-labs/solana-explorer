@@ -1,12 +1,12 @@
 'use client';
 
+import React from 'react';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { StatsNotReady } from '@components/StatsNotReady';
 import { ClusterStatsStatus, PERF_UPDATE_SEC, usePerformanceInfo } from '@providers/stats/solanaClusterStats';
 import { PerformanceInfo } from '@providers/stats/solanaPerformanceInfo';
 import { BarElement, CategoryScale, Chart, ChartData, ChartOptions, LinearScale, Tooltip } from 'chart.js';
 import classNames from 'classnames';
-import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import CountUp from 'react-countup';
 

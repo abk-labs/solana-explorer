@@ -1,11 +1,12 @@
 'use client';
 
+
+import React, { useEffect, useRef } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import Jazzicon from '@metamask/jazzicon';
 import { PublicKey } from '@solana/web3.js';
 import bs58 from 'bs58';
-import React, { useEffect, useRef } from 'react';
 
 export function Identicon(props: { address?: string | PublicKey; style?: React.CSSProperties; className?: string }) {
     const { style, className } = props;

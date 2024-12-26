@@ -1,5 +1,5 @@
-import { PublicKey } from '@solana/web3.js';
 import { Suspense } from 'react';
+import { PublicKey } from '@solana/web3.js';
 
 import { UpgradeableLoaderAccountData } from '@/app/providers/accounts';
 import { useAnchorProgram } from '@/app/providers/anchor';
@@ -10,7 +10,6 @@ import {
     useSquadsMultisig,
     useSquadsMultisigLookup,
 } from '@/app/providers/squadsMultisig';
-
 import { Address } from '../common/Address';
 import { LoadingCard } from '../common/LoadingCard';
 import { TableCardBody } from '../common/TableCardBody';

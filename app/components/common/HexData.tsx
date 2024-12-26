@@ -1,5 +1,5 @@
-import { Buffer } from 'buffer';
 import React, { ReactNode } from 'react';
+import { Buffer } from 'buffer';
 
 import { Copyable } from './Copyable';
 

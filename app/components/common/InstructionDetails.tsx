@@ -1,7 +1,7 @@
+import React from 'react';
 import { isTokenProgramData } from '@providers/accounts';
 import { ConfirmedSignatureInfo } from '@solana/web3.js';
 import { getTokenProgramInstructionName, InstructionType } from '@utils/instruction';
-import React from 'react';
 import { MinusSquare, PlusSquare } from 'react-feather';
 
 export function InstructionDetails({

@@ -1,7 +1,7 @@
+import React from 'react';
 import { TransactionSignature } from '@solana/web3.js';
 import { useClusterPath } from '@utils/url';
 import Link from 'next/link';
-import React from 'react';
 
 import { Copyable } from './Copyable';
 

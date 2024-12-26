@@ -1,3 +1,4 @@
+import React from 'react';
 import { ProgramLogsCardBody } from '@components/ProgramLogsCardBody';
 import { TOKEN_2022_PROGRAM_ID, TOKEN_PROGRAM_ID } from '@providers/accounts/tokens';
 import { useCluster } from '@providers/cluster';
@@ -5,7 +6,6 @@ import { AccountLayout, MintLayout } from "@solana/spl-token";
 import { AccountInfo, AddressLookupTableAccount, Connection, MessageAddressTableLookup, ParsedAccountData, ParsedMessageAccount, SimulatedTransactionAccountInfo, TokenBalance, VersionedMessage, VersionedTransaction } from '@solana/web3.js';
 import { PublicKey } from '@solana/web3.js';
 import { InstructionLogs, parseProgramLogs } from '@utils/program-logs';
-import React from 'react';
 
 import { generateTokenBalanceRows,TokenBalancesCardInner, TokenBalancesCardInnerProps } from '../transaction/TokenBalancesCard';
 

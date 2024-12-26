@@ -1,3 +1,4 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { SolBalance } from '@components/common/SolBalance';
 import { useCluster } from '@providers/cluster';
@@ -12,7 +13,6 @@ import {
     parseSetLoadedAccountsDataSizeLimitInstruction,
 } from '@solana-program/compute-budget';
 import { microLamportsToLamportsString } from '@utils/index';
-import React from 'react';
 import { address } from 'web3js-experimental';
 
 import { InstructionCard } from './InstructionCard';

@@ -1,8 +1,8 @@
 'use client';
 
+import React, { Suspense } from 'react';
 import { MetaplexNFTAttributesCard } from '@components/account/MetaplexNFTAttributesCard';
 import { ParsedAccountRenderer } from '@components/account/ParsedAccountRenderer';
-import React, { Suspense } from 'react';
 
 import { LoadingCard } from '@/app/components/common/LoadingCard';
 

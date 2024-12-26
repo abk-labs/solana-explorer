@@ -1,9 +1,10 @@
+import { useEffect, useState } from 'react';
 import { useCluster } from '@providers/cluster';
 import { SignatureResult, TransactionInstruction } from '@solana/web3.js';
 import moment from 'moment';
-import { useEffect, useState } from 'react';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { ChangePerpMarketParams, getPerpMarketFromInstruction, getPerpMarketFromPerpMarketConfig } from './types';
 
 export function ChangePerpMarketParamsDetailsCard(props: {

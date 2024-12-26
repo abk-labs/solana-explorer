@@ -1,8 +1,8 @@
 'use client';
 
+import React from 'react';
 import { useCluster } from '@providers/cluster';
 import { Cluster, ClusterStatus } from '@utils/cluster';
-import React from 'react';
 import { createSolanaRpc } from 'web3js-experimental';
 
 export enum Status {

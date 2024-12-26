@@ -1,3 +1,4 @@
+import React, { createRef } from 'react';
 import { InfoTooltip } from '@components/common/InfoTooltip';
 import { ArtContent } from '@components/common/NFTArt';
 import { programs } from '@metaplex/js';
@@ -6,7 +7,6 @@ import { EditionInfo } from '@providers/accounts/utils/getEditionInfo';
 import { PublicKey } from '@solana/web3.js';
 import { useClusterPath } from '@utils/url';
 import Link from 'next/link';
-import React, { createRef } from 'react';
 import { AlertOctagon, Check, ChevronDown } from 'react-feather';
 import useAsyncEffect from 'use-async-effect';
 
