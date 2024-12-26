@@ -1,7 +1,7 @@
 'use client';
 
-import { useCluster } from '@providers/cluster';
 import React from 'react';
+import { useCluster } from '@providers/cluster';
 import useTabVisibility from 'use-tab-visibility';
 import { createSolanaRpc } from 'web3js-experimental';
 

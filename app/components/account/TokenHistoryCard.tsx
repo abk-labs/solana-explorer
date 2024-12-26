@@ -19,7 +19,8 @@ import { CacheEntry, FetchStatus } from '@providers/cache';
 import { useCluster } from '@providers/cluster';
 import { Details, useFetchTransactionDetails, useTransactionDetailsCache } from '@providers/transactions/parsed';
 import { ConfirmedSignatureInfo, ParsedInstruction, PartiallyDecodedInstruction, PublicKey } from '@solana/web3.js';
-import { Cluster, SolanaCluster } from '@utils/cluster';
+import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import { INNER_INSTRUCTIONS_START_SLOT } from '@utils/index';
 import { getTokenProgramInstructionName } from '@utils/instruction';
 import { displayAddress, intoTransactionInstruction } from '@utils/tx';
@@ -373,7 +374,7 @@ const TokenTransactionRow = React.memo(function TokenTransactionRow({
 
                 if (
                     transactionWithMeta.meta?.innerInstructions &&
-                    (cluster.cluster !== SolanaCluster.MainnetBeta ||
+                    (cluster.cluster !== ClusterType.MainnetBeta ||
                         transactionWithMeta.slot >= INNER_INSTRUCTIONS_START_SLOT)
                 ) {
                     transactionWithMeta.meta.innerInstructions.forEach(ix => {

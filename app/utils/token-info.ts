@@ -1,7 +1,8 @@
 import { Connection, PublicKey } from '@solana/web3.js';
 import { ChainId, Client, Token, UtlConfig } from '@solflare-wallet/utl-sdk';
+import { ClusterType } from '@utils/clusterTypes';
 
-import { Cluster, SolanaCluster } from './cluster';
+import { Cluster } from './cluster';
 
 type TokenExtensions = {
     readonly website?: string;
@@ -40,10 +41,10 @@ type FullLegacyTokenInfoList = {
 };
 
 function getChainId(cluster: Cluster): ChainId | undefined {
-    const slug = cluster.cluster;
-    if (slug === SolanaCluster.MainnetBeta) return ChainId.MAINNET;
-    else if (slug === SolanaCluster.Testnet) return ChainId.TESTNET;
-    else if (slug === SolanaCluster.Devnet) return ChainId.DEVNET;
+    const cluster_type = cluster.cluster;
+    if (cluster_type === ClusterType.MainnetBeta) return ChainId.MAINNET;
+    else if (cluster_type === ClusterType.Testnet) return ChainId.TESTNET;
+    else if (cluster_type === ClusterType.Devnet) return ChainId.DEVNET;
     else return undefined;
 }
 
