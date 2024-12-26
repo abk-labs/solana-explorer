@@ -1,5 +1,5 @@
-import { PublicKey } from '@solana/web3.js';
 import { useEffect, useState } from 'react';
+import { PublicKey } from '@solana/web3.js';
 
 export type VerifiableBuild =
     | {

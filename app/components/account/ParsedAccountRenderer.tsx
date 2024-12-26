@@ -1,3 +1,4 @@
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
 import { Account, useAccountInfo, useFetchAccountInfo } from '@providers/accounts';
@@ -7,7 +8,6 @@ import { PublicKey } from '@solana/web3.js';
 import { ClusterStatus } from '@utils/cluster';
 import { RedirectType } from 'next/dist/client/components/redirect';
 import { redirect } from 'next/navigation';
-import React, { useCallback, useEffect, useMemo } from 'react';
 
 import { useClusterPath } from '@/app/utils/url';
 

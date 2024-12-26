@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Address } from '@components/common/Address';
 import { BorshEventCoder, BorshInstructionCoder, Idl, Instruction, Program } from '@coral-xyz/anchor';
 import { IdlEvent, IdlField, IdlInstruction, IdlTypeDefTyStruct } from '@coral-xyz/anchor/dist/cjs/idl';
@@ -10,7 +11,6 @@ import {
     mapIxArgsToRows,
 } from '@utils/anchor';
 import { camelToTitleCase } from '@utils/index';
-import { useMemo } from 'react';
 
 import { InstructionCard } from './InstructionCard';
 

@@ -1,6 +1,6 @@
+import React from 'react';
 import { useCluster } from '@providers/cluster';
 import { useStatsProvider } from '@providers/stats/solanaClusterStats';
-import React from 'react';
 import { RefreshCw } from 'react-feather';
 
 const CLUSTER_STATS_TIMEOUT = 5000;

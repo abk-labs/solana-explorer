@@ -1,12 +1,13 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { BPF_LOADER_PROGRAM_ID, ParsedInstruction, ParsedTransaction, SignatureResult } from '@solana/web3.js';
 import { wrap } from '@utils/index';
 import { ParsedInfo } from '@validators/index';
-import React from 'react';
 import { create } from 'superstruct';
 
 import { InstructionCard } from '../InstructionCard';
 import { UnknownDetailsCard } from '../UnknownDetailsCard';
+
 import { FinalizeInfo, WriteInfo } from './types';
 
 type DetailsProps = {

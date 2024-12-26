@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from 'react';
 import { Address } from '@components/common/Address';
 import { Copyable } from '@components/common/Copyable';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -38,7 +39,6 @@ import {
 } from '@validators/accounts/token-extension';
 import { BigNumber } from 'bignumber.js';
 import { capitalCase } from 'change-case';
-import { useEffect, useMemo, useState } from 'react';
 import { ExternalLink, RefreshCw } from 'react-feather';
 import { create } from 'superstruct';
 import useSWR from 'swr';

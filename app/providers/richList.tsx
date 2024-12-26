@@ -1,9 +1,9 @@
 'use client';
 
+import React from 'react';
 import { useCluster } from '@providers/cluster';
 import { AccountBalancePair, Connection } from '@solana/web3.js';
 import { Cluster, ClusterStatus } from '@utils/cluster';
-import React from 'react';
 
 export enum Status {
     Idle,

@@ -1,7 +1,8 @@
-import { Address } from '@components/common/Address';
 import React from 'react';
+import { Address } from '@components/common/Address';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { SerumIxDetailsProps, SweepFees } from './types';
 
 export function SweepFeesDetailsCard(props: SerumIxDetailsProps<SweepFees>) {

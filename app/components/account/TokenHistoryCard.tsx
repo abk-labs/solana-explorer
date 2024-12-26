@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useCallback } from 'react';
 import { Address } from '@components/common/Address';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -25,7 +26,6 @@ import { getTokenProgramInstructionName } from '@utils/instruction';
 import { displayAddress, intoTransactionInstruction } from '@utils/tx';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import React, { useCallback } from 'react';
 import { ChevronDown, MinusSquare, PlusSquare, RefreshCw } from 'react-feather';
 
 const TRUNCATE_TOKEN_LENGTH = 10;

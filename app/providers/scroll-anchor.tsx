@@ -1,7 +1,7 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
 import React, { createContext, ReactNode, RefCallback, useCallback, useContext, useEffect, useRef } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 type URLFragment = string;
 

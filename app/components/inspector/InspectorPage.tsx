@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
 import { SolBalance } from '@components/common/SolBalance';
@@ -12,7 +13,6 @@ import { PACKET_DATA_SIZE, VersionedMessage } from '@solana/web3.js';
 import { useClusterPath } from '@utils/url';
 import base58 from 'bs58';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React from 'react';
 
 import { AccountsCard } from './AccountsCard';
 import { AddressTableLookupsCard } from './AddressTableLookupsCard';

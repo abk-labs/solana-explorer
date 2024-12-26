@@ -1,8 +1,8 @@
 'use client';
 
+import React from 'react';
 import { useCluster, useClusterModal } from '@providers/cluster';
 import { ClusterStatus } from '@utils/cluster';
-import React from 'react';
 import { AlertCircle, CheckCircle } from 'react-feather';
 
 export function ClusterStatusBanner() {

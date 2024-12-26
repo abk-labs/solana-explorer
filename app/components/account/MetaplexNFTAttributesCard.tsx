@@ -1,7 +1,7 @@
+import React from 'react';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
 import { Account, isTokenProgramData } from '@providers/accounts';
-import React from 'react';
 
 import { useCluster } from '@/app/providers/cluster';
 import { useCompressedNft } from '@/app/providers/compressed-nft';

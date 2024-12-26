@@ -1,6 +1,6 @@
+import React from 'react';
 import { SolBalance } from '@components/common/SolBalance';
 import { Account } from '@providers/accounts';
-import React from 'react';
 import { RefreshCw } from 'react-feather';
 
 import { Address } from './Address';

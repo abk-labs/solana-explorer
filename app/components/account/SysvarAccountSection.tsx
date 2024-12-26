@@ -1,3 +1,4 @@
+import React from 'react';
 import { AccountAddressRow, AccountBalanceRow, AccountHeader } from '@components/common/Account';
 import { Epoch } from '@components/common/Epoch';
 import { Slot } from '@components/common/Slot';
@@ -16,7 +17,6 @@ import {
     SysvarSlotHistoryAccount,
     SysvarStakeHistoryAccount,
 } from '@validators/accounts/sysvar';
-import React from 'react';
 
 export function SysvarAccountSection({ account, sysvarAccount }: { account: Account; sysvarAccount: SysvarAccount }) {
     switch (sysvarAccount.type) {

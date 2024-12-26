@@ -1,12 +1,12 @@
 'use client';
 
+import React from 'react';
 import { ActionType } from '@providers/block';
 import * as Cache from '@providers/cache';
 import { FetchStatus } from '@providers/cache';
 import { useCluster } from '@providers/cluster';
 import { Connection, InflationReward, PublicKey } from '@solana/web3.js';
 import { Cluster, SolanaCluster } from '@utils/cluster';
-import React from 'react';
 
 const REWARDS_AVAILABLE_EPOCH = new Map<SolanaCluster, number>([
     [SolanaCluster.MainnetBeta, 132],

@@ -1,7 +1,8 @@
-import { Address } from '@components/common/Address';
 import React from 'react';
+import { Address } from '@components/common/Address';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { InitializeMarket, SerumIxDetailsProps } from './types';
 
 export function InitializeMarketDetailsCard(props: SerumIxDetailsProps<InitializeMarket>) {

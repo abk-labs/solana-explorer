@@ -1,3 +1,4 @@
+import React from 'react';
 import { UnknownAccountCard } from '@components/account/UnknownAccountCard';
 import { Address } from '@components/common/Address';
 import { DownloadableIcon } from '@components/common/Downloadable';
@@ -17,13 +18,11 @@ import {
     UpgradeableLoaderAccount,
 } from '@validators/accounts/upgradeable-program';
 import Link from 'next/link';
-import React from 'react';
 import { ExternalLink, RefreshCw } from 'react-feather';
 
 import { useSquadsMultisigLookup } from '@/app/providers/squadsMultisig';
 import { Cluster } from '@/app/utils/cluster';
 import { useClusterPath } from '@/app/utils/url';
-
 import { VerifiedProgramBadge } from '../common/VerifiedProgramBadge';
 
 export function UpgradeableLoaderAccountSection({

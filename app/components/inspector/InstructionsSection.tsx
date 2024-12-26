@@ -1,3 +1,4 @@
+import React from 'react';
 import { HexData } from '@components/common/HexData';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { useCluster } from '@providers/cluster';
@@ -11,11 +12,10 @@ import {
 } from '@solana/web3.js';
 import getInstructionCardScrollAnchorId from '@utils/get-instruction-card-scroll-anchor-id';
 import { getProgramName } from '@utils/tx';
-import React from 'react';
 
 import { useAnchorProgram } from '@/app/providers/anchor';
-
 import AnchorDetailsCard from '../instruction/AnchorDetailsCard';
+
 import { AddressFromLookupTableWithContext, AddressWithContext, programValidator } from './AddressWithContext';
 
 export function InstructionsSection({ message }: { message: VersionedMessage }) {

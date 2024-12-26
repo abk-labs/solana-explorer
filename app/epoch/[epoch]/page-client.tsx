@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { Epoch } from '@components/common/Epoch';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -10,7 +11,6 @@ import { useCluster } from '@providers/cluster';
 import { useEpoch, useFetchEpoch } from '@providers/epoch';
 import { ClusterStatus } from '@utils/cluster';
 import { displayTimestampUtc } from '@utils/date';
-import React from 'react';
 
 import { getFirstSlotInEpoch, getLastSlotInEpoch } from '@/app/utils/epoch-schedule';
 

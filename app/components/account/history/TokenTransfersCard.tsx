@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useMemo } from 'react';
 import { Address } from '@components/common/Address';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -13,14 +14,13 @@ import { ParsedInstruction, ParsedTransactionWithMeta, PartiallyDecodedInstructi
 import { Cluster, SolanaCluster } from '@utils/cluster';
 import { normalizeTokenAmount } from '@utils/index';
 import { InstructionContainer } from '@utils/instruction';
-import React, { useMemo } from 'react';
 import Moment from 'react-moment';
 import { create } from 'superstruct';
 import useSWR from 'swr';
 
 import { getTokenInfo, getTokenInfoSwrKey } from '@/app/utils/token-info';
-
 import { getTransactionRows, HistoryCardFooter, HistoryCardHeader } from '../HistoryCardComponents';
+
 import { extractMintDetails, MintDetails } from './common';
 
 type IndexedTransfer = {

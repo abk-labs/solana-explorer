@@ -1,10 +1,10 @@
 'use client';
 
+import React from 'react';
 import { SupplyCard } from '@components/SupplyCard';
 import { TopAccountsCard } from '@components/TopAccountsCard';
 import { useCluster } from '@providers/cluster';
-import { SolanaCluster } from '@utils/cluster';
-import React from 'react';
+import { SolanaCluster } from '@utils/cluster'
 
 export default function SupplyPageClient() {
     const { cluster } = useCluster();

@@ -1,8 +1,9 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { ParsedInstruction, SignatureResult } from '@solana/web3.js';
-import React from 'react';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { CreateIdempotentInfo } from './types';
 
 export function CreateIdempotentDetailsCard(props: {

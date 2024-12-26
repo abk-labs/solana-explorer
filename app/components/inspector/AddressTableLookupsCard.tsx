@@ -1,8 +1,8 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { useAddressLookupTable } from '@providers/accounts';
 import { FetchStatus } from '@providers/cache';
 import { PublicKey, VersionedMessage } from '@solana/web3.js';
-import React from 'react';
 
 export function AddressTableLookupsCard({ message }: { message: VersionedMessage }) {
     const [expanded, setExpanded] = React.useState(true);

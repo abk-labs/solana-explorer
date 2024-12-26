@@ -1,7 +1,7 @@
+import React from 'react';
 import { Account, useAccountInfo, useFetchAccountInfo } from '@providers/accounts';
 import { ConcurrentMerkleTreeAccount, MerkleTree } from '@solana/spl-account-compression';
 import { PublicKey } from '@solana/web3.js';
-import React from 'react';
 
 import { useCluster } from '@/app/providers/cluster';
 import {
@@ -10,7 +10,6 @@ import {
     useCompressedNft,
     useCompressedNftProof,
 } from '@/app/providers/compressed-nft';
-
 import { Address } from '../common/Address';
 import { TableCardBody } from '../common/TableCardBody';
 

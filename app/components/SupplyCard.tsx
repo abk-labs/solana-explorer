@@ -1,9 +1,9 @@
+import React from 'react';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
 import { SolBalance } from '@components/common/SolBalance';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { Status, useFetchSupply, useSupply } from '@providers/supply';
-import React from 'react';
 
 export function SupplyCard() {
     const supply = useSupply();

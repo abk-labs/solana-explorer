@@ -1,13 +1,14 @@
 'use client';
 
-import logo from '@img/zuma-full-logo.png';
+import React from 'react';
 import { useClusterPath } from '@utils/url';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/navigation';
-import React from 'react';
 
 import { ClusterStatusButton } from './ClusterStatusButton';
+
+import logo from '@img/zuma-full-logo.png';
 
 export function Navbar() {
     // TODO: use `collapsing` to animate collapsible navbar
