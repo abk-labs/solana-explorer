@@ -1,5 +1,5 @@
-import { Metadata } from 'next/types';
 import React from 'react';
+import { Metadata } from 'next/types';
 
 type Props = Readonly<{
     children: React.ReactNode;

@@ -1,7 +1,8 @@
-import { Address } from '@components/common/Address';
 import React from 'react';
+import { Address } from '@components/common/Address';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { CloseOpenOrders, SerumIxDetailsProps } from './types';
 
 export function CloseOpenOrdersDetailsCard(props: SerumIxDetailsProps<CloseOpenOrders>) {

@@ -1,6 +1,6 @@
+import React from 'react';
 import { SignatureProps } from '@utils/index';
 import { Metadata } from 'next/types';
-import React from 'react';
 
 import TransactionDetailsPageClient from './page-client';
 

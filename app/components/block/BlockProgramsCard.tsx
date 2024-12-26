@@ -1,7 +1,7 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { PublicKey, VersionedBlockResponse } from '@solana/web3.js';
-import React from 'react';
 
 export function BlockProgramsCard({ block }: { block: VersionedBlockResponse }) {
     const totalTransactions = block.transactions.length;

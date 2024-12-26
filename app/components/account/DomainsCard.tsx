@@ -1,13 +1,12 @@
 'use client';
 
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
 import { useUserDomains } from '@utils/name-service';
-import React from 'react';
 
 import { DomainInfo } from '@/app/utils/domain-info';
-
 import { useUserANSDomains } from '../../utils/ans-domains';
 
 export function DomainsCard({ address }: { address: string }) {

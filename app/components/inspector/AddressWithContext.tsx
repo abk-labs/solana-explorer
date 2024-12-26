@@ -1,3 +1,4 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { Account, useAccountInfo, useAddressLookupTable, useFetchAccountInfo } from '@providers/accounts';
 import { useCluster } from '@providers/cluster';
@@ -5,7 +6,6 @@ import { PublicKey, SystemProgram } from '@solana/web3.js';
 import { ClusterStatus } from '@utils/cluster';
 import { lamportsToSolString } from '@utils/index';
 import { addressLabel } from '@utils/tx';
-import React from 'react';
 
 type AccountValidator = (account: Account) => string | undefined;
 

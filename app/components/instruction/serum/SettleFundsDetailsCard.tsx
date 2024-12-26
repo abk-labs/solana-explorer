@@ -1,7 +1,8 @@
-import { Address } from '@components/common/Address';
 import React from 'react';
+import { Address } from '@components/common/Address';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { SerumIxDetailsProps, SettleFunds } from './types';
 
 export function SettleFundsDetailsCard(props: SerumIxDetailsProps<SettleFunds>) {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { ParsedMessage, PublicKey, VersionedMessage } from '@solana/web3.js';
 import { ProgramName } from '@utils/anchor';
@@ -7,7 +8,6 @@ import { InstructionLogs } from '@utils/program-logs';
 import { useClusterPath } from '@utils/url';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react';
 import { ChevronsUp } from 'react-feather';
 
 const NATIVE_PROGRAMS_MISSING_INVOKE_LOG: string[] = [

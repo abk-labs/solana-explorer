@@ -1,10 +1,10 @@
 'use client';
 
+import React from 'react';
 import { useCluster } from '@providers/cluster';
 import { useStatsProvider } from '@providers/stats/solanaClusterStats';
 import { Cluster } from '@utils/cluster';
 import { fetch } from 'cross-fetch';
-import React from 'react';
 import useTabVisibility from 'use-tab-visibility';
 
 const FETCH_PING_INTERVAL = 60 * 1000;

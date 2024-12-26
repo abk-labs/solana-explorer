@@ -1,10 +1,11 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { Copyable } from '@components/common/Copyable';
 import { SolBalance } from '@components/common/SolBalance';
 import { ParsedInstruction, SignatureResult, SystemProgram } from '@solana/web3.js';
-import React from 'react';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { TransferWithSeedInfo } from './types';
 
 export function TransferWithSeedDetailsCard(props: {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
 import { isAddressLookupTableInstruction } from '@components/instruction/address-lookup-table/types';
@@ -39,7 +40,6 @@ import {
 import { ClusterType } from '@utils/clusterTypes';
 import { INNER_INSTRUCTIONS_START_SLOT, SignatureProps } from '@utils/index';
 import { intoTransactionInstruction } from '@utils/tx';
-import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import AnchorDetailsCard from '../instruction/AnchorDetailsCard';

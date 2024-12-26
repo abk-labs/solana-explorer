@@ -1,13 +1,13 @@
 'use client';
 
+import React from 'react';
+import { useState } from 'react';
 import { Connection, programs } from '@metaplex/js';
 import { useCluster } from '@providers/cluster';
 import { PublicKey } from '@solana/web3.js';
 import { displayAddress, TokenLabelInfo } from '@utils/tx';
 import { useClusterPath } from '@utils/url';
 import Link from 'next/link';
-import React from 'react';
-import { useState } from 'react';
 import useAsyncEffect from 'use-async-effect';
 
 import { getTokenInfoWithoutOnChainFallback } from '@/app/utils/token-info';

@@ -1,5 +1,5 @@
-import { TransactionsProvider } from '@providers/transactions';
 import { PropsWithChildren } from 'react';
+import { TransactionsProvider } from '@providers/transactions';
 
 import { AccountsProvider } from '../providers/accounts';
 

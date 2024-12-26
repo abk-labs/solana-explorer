@@ -1,8 +1,9 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { SignatureResult, TransactionInstruction } from '@solana/web3.js';
-import React from 'react';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { TradingStatus, UpdatePriceParams } from './program';
 
 export default function UpdatePriceDetailsCard({

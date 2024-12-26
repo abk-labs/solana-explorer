@@ -1,9 +1,10 @@
+import React from 'react';
 import { ParsedInstruction, ParsedTransaction, SignatureResult } from '@solana/web3.js';
 import { ParsedInfo } from '@validators/index';
-import React from 'react';
 import { create } from 'superstruct';
 
 import { UnknownDetailsCard } from '../UnknownDetailsCard';
+
 import { AllocateDetailsCard } from './AllocateDetailsCard';
 import { AllocateWithSeedDetailsCard } from './AllocateWithSeedDetailsCard';
 import { AssignDetailsCard } from './AssignDetailsCard';

@@ -1,7 +1,7 @@
 'use client';
 
-import { ParsedAccountRenderer } from '@components/account/ParsedAccountRenderer';
 import React, { Suspense } from 'react';
+import { ParsedAccountRenderer } from '@components/account/ParsedAccountRenderer';
 
 import { CompressedNFTInfoCard } from '@/app/components/account/CompressedNFTInfoCard';
 import { LoadingCard } from '@/app/components/common/LoadingCard';

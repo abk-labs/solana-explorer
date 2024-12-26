@@ -1,8 +1,8 @@
 'use client';
 
+import React, { createContext, useContext, useEffect, useReducer, useState } from 'react';
 import { type Cluster, clusters, ClusterStatus } from '@utils/cluster';
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation';
-import React, { createContext, useContext, useEffect, useReducer, useState } from 'react';
 import { createSolanaRpc } from 'web3js-experimental';
 
 import { EpochSchedule } from '../utils/epoch-schedule';

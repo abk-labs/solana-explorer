@@ -1,11 +1,11 @@
 'use client';
 
+import React from 'react';
 import { ActionType } from '@providers/block';
 import * as Cache from '@providers/cache';
 import { FetchStatus } from '@providers/cache';
 import { useCluster } from '@providers/cluster';
 import { Connection, InflationReward, PublicKey } from '@solana/web3.js';
-import React from 'react';
 import { Cluster } from '@utils/cluster';
 import { ClusterType } from '@utils/clusterTypes';
 

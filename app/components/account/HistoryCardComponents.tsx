@@ -1,5 +1,5 @@
-import { ConfirmedSignatureInfo, TransactionError } from '@solana/web3.js';
 import React from 'react';
+import { ConfirmedSignatureInfo, TransactionError } from '@solana/web3.js';
 import { RefreshCw } from 'react-feather';
 
 export type TransactionRow = {

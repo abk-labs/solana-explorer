@@ -1,5 +1,6 @@
 'use client';
 
+import React, { Suspense, useEffect, useState } from 'react';
 import { Address } from '@components/common/Address';
 import { BalanceDelta } from '@components/common/BalanceDelta';
 import { ErrorCard } from '@components/common/ErrorCard';
@@ -33,7 +34,6 @@ import { useClusterPath } from '@utils/url';
 import { BigNumber } from 'bignumber.js';
 import bs58 from 'bs58';
 import Link from 'next/link';
-import React, { Suspense, useEffect, useState } from 'react';
 import { RefreshCw, Settings } from 'react-feather';
 import useTabVisibility from 'use-tab-visibility';
 

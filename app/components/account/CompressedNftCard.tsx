@@ -1,17 +1,17 @@
+import { createRef, Suspense } from 'react';
 import { Account } from '@providers/accounts';
 import { PublicKey } from '@solana/web3.js';
-import { createRef, Suspense } from 'react';
 import { ChevronDown, ExternalLink } from 'react-feather';
 import useAsyncEffect from 'use-async-effect';
 
 import { useCluster } from '@/app/providers/cluster';
 import { CompressedNft, useCompressedNft, useMetadataJsonLink } from '@/app/providers/compressed-nft';
-
 import { Address } from '../common/Address';
 import { InfoTooltip } from '../common/InfoTooltip';
 import { LoadingArtPlaceholder } from '../common/LoadingArtPlaceholder';
 import { ArtContent } from '../common/NFTArt';
 import { TableCardBody } from '../common/TableCardBody';
+
 import { getCreatorDropdownItems, getIsMutablePill, getVerifiedCollectionPill } from './MetaplexNFTHeader';
 import { UnknownAccountCard } from './UnknownAccountCard';
 

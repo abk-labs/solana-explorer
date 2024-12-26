@@ -1,3 +1,4 @@
+import React from 'react';
 import { PublicKey, SignatureResult, TransactionInstruction } from '@solana/web3.js';
 import {
     EquatableOperator,
@@ -23,15 +24,14 @@ import {
     parseMemoryCloseInstruction,
     parseMemoryWriteInstruction,
 } from 'lighthouse-sdk';
-import React from 'react';
 import { CornerDownRight } from 'react-feather';
 import { AccountRole, Address as TAddress, address, IAccountMeta, IInstruction } from 'web3js-experimental';
 
 import { camelToTitleCase } from '@/app/utils';
 import { ExpandableRow } from '@/app/utils/anchor';
-
 import { Address } from '../../common/Address';
 import { InstructionCard } from '../InstructionCard';
+
 import { LIGHTHOUSE_ADDRESS } from './types';
 
 function upcastTransactionInstruction(ix: TransactionInstruction) {
