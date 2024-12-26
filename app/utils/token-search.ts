@@ -6,9 +6,10 @@
  * So to avoid pulling in extra dependencies we just use the public API directly for search
  */
 
+import { ClusterType } from '@utils/clusterTypes';
 import { Address } from 'web3js-experimental';
 
-import { Cluster, SolanaCluster } from './cluster';
+import { Cluster } from './cluster';
 
 type TokenSearchApiResponseToken = {
     address: Address;
@@ -37,13 +38,13 @@ export async function searchTokens(search: string, cluster: Cluster): Promise<Se
         return [];
     }
 
-    const slug = cluster.cluster;
+    const cluster_type = cluster.cluster;
 
     // See https://github.com/solflare-wallet/utl-sdk/blob/master/src/types.ts#L5
     let chainId: number;
-    if (slug === SolanaCluster.MainnetBeta) chainId = 101;
-    else if (slug === SolanaCluster.Testnet) chainId = 102;
-    else if (slug === SolanaCluster.Devnet) chainId = 103;
+    if (cluster_type === ClusterType.MainnetBeta) chainId = 101;
+    else if (cluster_type === ClusterType.Testnet) chainId = 102;
+    else if (cluster_type === ClusterType.Devnet) chainId = 103;
     else {
         return [];
     }
