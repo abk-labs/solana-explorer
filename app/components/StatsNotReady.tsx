@@ -1,6 +1,6 @@
+import React from 'react';
 import { useCluster } from '@providers/cluster';
 import { useStatsProvider } from '@providers/stats/solanaClusterStats';
-import React from 'react';
 import { RefreshCw } from 'react-feather';
 
 const CLUSTER_STATS_TIMEOUT = 5000;
@@ -21,7 +21,7 @@ export function StatsNotReady({ error }: { error: boolean }) {
         };
     }, [setTimedOut, cluster, error]);
 
-    if (error || !active) {
+    if (!active) {
         return (
             <div className="card-body text-center">
                 There was a problem loading cluster stats.{' '}

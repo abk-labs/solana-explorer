@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useState } from 'react';
 import { Address } from '@components/common/Address';
 import { Copyable } from '@components/common/Copyable';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -38,7 +39,6 @@ import {
 } from '@validators/accounts/token-extension';
 import { BigNumber } from 'bignumber.js';
 import { capitalCase } from 'change-case';
-import { useEffect, useMemo, useState } from 'react';
 import { ExternalLink, RefreshCw } from 'react-feather';
 import { create } from 'superstruct';
 import useSWR from 'swr';
@@ -74,8 +74,6 @@ export function TokenAccountSection({
     tokenAccount: TokenAccount;
     tokenInfo?: FullLegacyTokenInfo;
 }) {
-    const { cluster } = useCluster();
-
     try {
         switch (tokenAccount.type) {
             case 'mint': {
@@ -103,11 +101,9 @@ export function TokenAccountSection({
             }
         }
     } catch (err) {
-        if (cluster !== Cluster.Custom) {
-            console.error(err, {
-                address: account.pubkey.toBase58(),
-            });
-        }
+        console.error(err, {
+            address: account.pubkey.toBase58(),
+        });
     }
     return <UnknownAccountCard account={account} />;
 }
@@ -407,7 +403,7 @@ function TokenAccountCard({ account, info }: { account: Account; info: TokenAcco
     const { cluster, clusterInfo, url } = useCluster();
     const epoch = clusterInfo?.epochInfo.epoch;
     const label = addressLabel(account.pubkey.toBase58(), cluster);
-    const swrKey = useMemo(() => getTokenInfoSwrKey(info.mint.toString(), cluster, url), [cluster, url]);
+    const swrKey = useMemo(() => getTokenInfoSwrKey(info.mint.toString(), cluster, url), [cluster, url, info.mint]);
     const { data: tokenInfo } = useSWR(swrKey, fetchTokenInfo);
     const [symbol, setSymbol] = useState<string | undefined>(undefined);
     const accountExtensions = info.extensions?.slice();
@@ -428,7 +424,7 @@ function TokenAccountCard({ account, info }: { account: Account; info: TokenAcco
         } else {
             setSymbol(tokenInfo?.symbol);
         }
-    }, [tokenInfo]);
+    }, [tokenInfo, info.isNative]);
 
     return (
         <div className="card">
@@ -479,10 +475,9 @@ function TokenAccountCard({ account, info }: { account: Account; info: TokenAcco
                 </tr>
                 {info.rentExemptReserve && (
                     <tr>
-                        <td>Rent-exempt reserve (SOL)</td>
+                        <td>Rent-exempt reserve (ZUMA)</td>
                         <td className="text-lg-end">
                             <>
-                                ◎
                                 <span className="font-monospace">
                                     {new BigNumber(info.rentExemptReserve.uiAmountString).toFormat(9)}
                                 </span>

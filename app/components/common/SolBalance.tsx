@@ -1,5 +1,5 @@
-import { lamportsToSolString } from '@utils/index';
 import React from 'react';
+import { lamportsToSolString } from '@utils/index';
 
 export function SolBalance({
     lamports,
@@ -10,7 +10,7 @@ export function SolBalance({
 }) {
     return (
         <span>
-            ◎<span className="font-monospace">{lamportsToSolString(lamports, maximumFractionDigits)}</span>
+            <span className="font-monospace">{lamportsToSolString(lamports, maximumFractionDigits)}</span>
         </span>
     );
 }

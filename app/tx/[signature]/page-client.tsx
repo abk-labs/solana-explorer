@@ -1,5 +1,6 @@
 'use client';
 
+import React, { Suspense, useEffect, useState } from 'react';
 import { Address } from '@components/common/Address';
 import { BalanceDelta } from '@components/common/BalanceDelta';
 import { ErrorCard } from '@components/common/ErrorCard';
@@ -23,7 +24,8 @@ import {
 } from '@providers/transactions';
 import { useFetchTransactionDetails } from '@providers/transactions/parsed';
 import { ParsedTransaction, SystemInstruction, SystemProgram, TransactionSignature } from '@solana/web3.js';
-import { Cluster, ClusterStatus } from '@utils/cluster';
+import { ClusterStatus } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import { displayTimestamp } from '@utils/date';
 import { SignatureProps } from '@utils/index';
 import { getTransactionInstructionError } from '@utils/program-err';
@@ -32,7 +34,6 @@ import { useClusterPath } from '@utils/url';
 import { BigNumber } from 'bignumber.js';
 import bs58 from 'bs58';
 import Link from 'next/link';
-import React, { Suspense, useEffect, useState } from 'react';
 import { RefreshCw, Settings } from 'react-feather';
 import useTabVisibility from 'use-tab-visibility';
 
@@ -212,11 +213,12 @@ function StatusCard({ signature, autoRefresh }: SignatureProps & AutoRefreshProp
         const err = getTransactionErrorReason(info, transaction);
         errorReason = err.errorReason;
         if (err.errorLink !== undefined) {
-            if (cluster === Cluster.MainnetBeta) {
+            if (cluster.cluster === ClusterType.MainnetBeta) {
                 errorLink = err.errorLink;
             } else {
-                errorLink = `${err.errorLink}?cluster=${clusterName.toLowerCase()}${cluster === Cluster.Custom ? `&customUrl=${clusterUrl}` : ''
-                    }`;
+                errorLink = `${err.errorLink}?cluster=${clusterName.toLowerCase()}${
+                    cluster.cluster === ClusterType.Custom ? `&customUrl=${clusterUrl}` : ''
+                }`;
             }
         }
     }
@@ -320,7 +322,7 @@ function StatusCard({ signature, autoRefresh }: SignatureProps & AutoRefreshProp
 
                 {fee && (
                     <tr>
-                        <td>Fee (SOL)</td>
+                        <td>Fee (ZUMA)</td>
                         <td className="text-lg-end">
                             <SolBalance lamports={fee} />
                         </td>
@@ -442,8 +444,8 @@ function AccountsCard({ signature }: SignatureProps) {
                         <tr>
                             <th className="text-muted">#</th>
                             <th className="text-muted">Address</th>
-                            <th className="text-muted">Change (SOL)</th>
-                            <th className="text-muted">Post Balance (SOL)</th>
+                            <th className="text-muted">Change (ZUMA)</th>
+                            <th className="text-muted">Post Balance (ZUMA)</th>
                             <th className="text-muted">Details</th>
                         </tr>
                     </thead>

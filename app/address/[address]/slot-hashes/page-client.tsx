@@ -1,8 +1,8 @@
 'use client';
 
+import React from 'react';
 import { ParsedAccountRenderer } from '@components/account/ParsedAccountRenderer';
 import { SlotHashesCard } from '@components/account/SlotHashesCard';
-import React from 'react';
 
 type Props = Readonly<{
     params: {

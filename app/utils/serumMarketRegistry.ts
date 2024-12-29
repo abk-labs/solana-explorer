@@ -1,4 +1,5 @@
 import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 const MARKET_REGISTRY: { [key: string]: string } = {
@@ -169,7 +170,7 @@ const MARKET_REGISTRY: { [key: string]: string } = {
 /* eslint-enable sort-keys-fix/sort-keys-fix */
 
 function get(address: string, cluster: Cluster): string | undefined {
-    if (cluster === Cluster.MainnetBeta) return MARKET_REGISTRY[address];
+    if (cluster.cluster === ClusterType.MainnetBeta) return MARKET_REGISTRY[address];
 }
 
 export const SerumMarketRegistry = {

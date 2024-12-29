@@ -1,3 +1,4 @@
+import React, { createRef, useMemo } from 'react';
 import { Address } from '@components/common/Address';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -7,7 +8,6 @@ import { useSupply } from '@providers/supply';
 import { AccountBalancePair } from '@solana/web3.js';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import React, { createRef, useMemo } from 'react';
 import { ChevronDown } from 'react-feather';
 import useAsyncEffect from 'use-async-effect';
 
@@ -92,7 +92,7 @@ export function TopAccountsCard() {
                                 <tr>
                                     <th className="text-muted">Rank</th>
                                     <th className="text-muted">Address</th>
-                                    <th className="text-muted text-end">Balance (SOL)</th>
+                                    <th className="text-muted text-end">Balance (ZUMA)</th>
                                     <th className="text-muted text-end">% of {header} Supply</th>
                                 </tr>
                             </thead>

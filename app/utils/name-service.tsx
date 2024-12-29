@@ -1,10 +1,10 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { getFilteredProgramAccounts, NAME_PROGRAM_ID, performReverseLookup } from '@bonfida/spl-name-service';
 import { useCluster } from '@providers/cluster';
 import { Connection, PublicKey } from '@solana/web3.js';
-import { Cluster } from '@utils/cluster';
-import { useEffect, useState } from 'react';
+import { ClusterType } from '@utils/clusterTypes';
 
 import { DomainInfo, SOL_TLD_AUTHORITY } from './domain-info';
 
@@ -37,7 +37,7 @@ export const useUserDomains = (userAddress: string): [DomainInfo[] | null, boole
     useEffect(() => {
         const resolve = async () => {
             // Allow only mainnet and custom
-            if (![Cluster.MainnetBeta, Cluster.Custom].includes(cluster)) return;
+            if (![ClusterType.MainnetBeta, ClusterType.Custom].includes(cluster.cluster as ClusterType)) return;
             const connection = new Connection(url, 'confirmed');
             try {
                 setLoading(true);

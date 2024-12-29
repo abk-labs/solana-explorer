@@ -1,9 +1,10 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { Copyable } from '@components/common/Copyable';
 import { ParsedInstruction, SignatureResult, SystemProgram } from '@solana/web3.js';
-import React from 'react';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { AssignWithSeedInfo } from './types';
 
 export function AssignWithSeedDetailsCard(props: {

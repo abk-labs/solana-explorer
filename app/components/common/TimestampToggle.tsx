@@ -1,7 +1,7 @@
 'use client';
 
-import { displayTimestamp, displayTimestampUtc } from '@utils/date';
 import { useState } from 'react';
+import { displayTimestamp, displayTimestampUtc } from '@utils/date';
 
 type State = 'hide' | 'show';
 

@@ -1,10 +1,10 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { SolBalance } from '@components/common/SolBalance';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { Account } from '@providers/accounts';
 import { useCluster } from '@providers/cluster';
 import { addressLabel } from '@utils/tx';
-import React from 'react';
 
 export function UnknownAccountCard({ account }: { account: Account }) {
     const { cluster } = useCluster();
@@ -30,7 +30,7 @@ export function UnknownAccountCard({ account }: { account: Account }) {
                     </tr>
                 )}
                 <tr>
-                    <td>Balance (SOL)</td>
+                    <td>Balance (ZUMA)</td>
                     <td className="text-lg-end">
                         {account.lamports === 0 ? 'Account does not exist' : <SolBalance lamports={account.lamports} />}
                     </td>

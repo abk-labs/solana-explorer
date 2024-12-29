@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { Epoch } from '@components/common/Epoch';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -21,7 +22,6 @@ import { Status, SupplyProvider, useFetchSupply, useSupply } from '@providers/su
 import { ClusterStatus } from '@utils/cluster';
 import { abbreviatedNumber, lamportsToSol, slotsToHumanString } from '@utils/index';
 import { percentage } from '@utils/math';
-import React from 'react';
 
 export default function Page() {
     return (
@@ -64,15 +64,14 @@ function StakingComponent() {
     }, [status]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const delinquentStake = React.useMemo(() => {
-        if (voteAccounts) {
-            return voteAccounts.delinquent.reduce((prev, current) => prev + current.activatedStake, BigInt(0));
-        }
-    }, [voteAccounts]);
+        return (voteAccounts?.delinquent || []).reduce((prev, current) => prev + current.activatedStake, BigInt(0));
+    }, [voteAccounts?.delinquent]);
 
     const activeStake = React.useMemo(() => {
-        if (voteAccounts && delinquentStake) {
-            return voteAccounts.current.reduce((prev, current) => prev + current.activatedStake, BigInt(0)) + delinquentStake;
-        }
+        return (
+            (voteAccounts?.current || []).reduce((prev, current) => prev + current.activatedStake, BigInt(0)) +
+            delinquentStake
+        );
     }, [voteAccounts, delinquentStake]);
 
     if (supply === Status.Disconnected) {
@@ -89,10 +88,7 @@ function StakingComponent() {
     // Calculate to 2dp for accuracy, then display as 1
     const circulatingPercentage = percentage(supply.circulating, supply.total, 2).toFixed(1);
 
-    let delinquentStakePercentage;
-    if (delinquentStake && activeStake) {
-        delinquentStakePercentage = percentage(delinquentStake, activeStake, 2).toFixed(1);
-    }
+    const delinquentStakePercentage = percentage(delinquentStake, activeStake, 2).toFixed(1);
 
     return (
         <div className="row staking-card">

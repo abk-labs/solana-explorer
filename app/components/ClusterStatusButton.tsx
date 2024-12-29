@@ -1,8 +1,8 @@
 'use client';
 
-import { useCluster, useClusterModal } from '@providers/cluster';
-import { Cluster, ClusterStatus } from '@utils/cluster';
 import React from 'react';
+import { useCluster, useClusterModal } from '@providers/cluster';
+import { ClusterStatus } from '@utils/cluster';
 import { AlertCircle, CheckCircle } from 'react-feather';
 
 export function ClusterStatusBanner() {
@@ -28,8 +28,7 @@ export function ClusterStatusButton() {
 }
 
 function Button() {
-    const { status, cluster, name, customUrl } = useCluster();
-    const statusName = cluster !== Cluster.Custom ? `${name}` : `${customUrl}`;
+    const { status, name } = useCluster();
 
     const btnClasses = (variant: string) => {
         return `btn d-block btn-${variant}`;
@@ -42,7 +41,7 @@ function Button() {
             return (
                 <span className={btnClasses('primary')}>
                     <CheckCircle className="fe me-2" size={15} />
-                    {statusName}
+                    {name}
                 </span>
             );
 
@@ -50,7 +49,7 @@ function Button() {
             return (
                 <span className={btnClasses('warning')}>
                     <span className={spinnerClasses} role="status" aria-hidden="true"></span>
-                    {statusName}
+                    {name}
                 </span>
             );
 
@@ -58,7 +57,7 @@ function Button() {
             return (
                 <span className={btnClasses('danger')}>
                     <AlertCircle className="me-2" size={15} />
-                    {statusName}
+                    {name}
                 </span>
             );
     }

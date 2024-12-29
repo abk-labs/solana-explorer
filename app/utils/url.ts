@@ -1,5 +1,5 @@
-import { useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 type Config = Readonly<{
     additionalParams?: { get(key: string): string | null; toString(): string };

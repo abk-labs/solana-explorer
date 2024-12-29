@@ -1,9 +1,9 @@
 'use client';
 
+import React from 'react';
 import { useCluster } from '@providers/cluster';
 import { AccountBalancePair, Connection } from '@solana/web3.js';
 import { Cluster, ClusterStatus } from '@utils/cluster';
-import React from 'react';
 
 export enum Status {
     Idle,
@@ -70,9 +70,7 @@ async function fetch(dispatch: Dispatch, cluster: Cluster, url: string) {
             return { circulating, nonCirculating, total };
         });
     } catch (err) {
-        if (cluster !== Cluster.Custom) {
-            console.error(err, { url });
-        }
+        console.error(err, { url });
         dispatch('Failed to fetch top accounts');
     }
 }

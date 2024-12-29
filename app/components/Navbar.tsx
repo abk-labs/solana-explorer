@@ -1,13 +1,14 @@
 'use client';
 
-import Logo from '@img/logos-solana/dark-explorer-logo.svg';
+import React from 'react';
 import { useClusterPath } from '@utils/url';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/navigation';
-import React from 'react';
 
 import { ClusterStatusButton } from './ClusterStatusButton';
+
+import logo from '@img/zuma-full-logo.png';
 
 export function Navbar() {
     // TODO: use `collapsing` to animate collapsible navbar
@@ -21,7 +22,7 @@ export function Navbar() {
         <nav className="navbar navbar-expand-md navbar-light">
             <div className="container">
                 <Link href={homePath}>
-                    <Image alt="Solana Explorer" height={22} src={Logo} width={250} />
+                    <Image alt="logo" src={logo} width={140} />
                 </Link>
 
                 <button className="navbar-toggler" type="button" onClick={() => setCollapse(value => !value)}>

@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { MetadataJson, programs } from '@metaplex/js';
 import getEditionInfo, { EditionInfo } from '@providers/accounts/utils/getEditionInfo';
 import * as Cache from '@providers/cache';
@@ -30,7 +31,6 @@ import {
 } from '@validators/accounts/upgradeable-program';
 import { VoteAccount } from '@validators/accounts/vote';
 import { ParsedInfo } from '@validators/index';
-import React from 'react';
 import { create } from 'superstruct';
 
 import { HistoryProvider } from './history';
@@ -198,7 +198,6 @@ async function fetchMultipleAccounts({
     dispatch,
     pubkeys,
     dataMode,
-    cluster,
     url,
 }: {
     dispatch: Dispatch;
@@ -293,9 +292,7 @@ async function fetchMultipleAccounts({
                 });
             }
         } catch (error) {
-            if (cluster !== Cluster.Custom) {
-                console.error(error, { url });
-            }
+            console.error(error, { url });
 
             for (const pubkey of batch) {
                 dispatch({

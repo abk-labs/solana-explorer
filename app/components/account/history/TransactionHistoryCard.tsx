@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useMemo } from 'react';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
 import { Signature } from '@components/common/Signature';
@@ -8,7 +9,6 @@ import { useAccountHistory, useFetchAccountHistory } from '@providers/accounts/h
 import { FetchStatus } from '@providers/cache';
 import { PublicKey } from '@solana/web3.js';
 import { displayTimestampUtc } from '@utils/date';
-import React, { useMemo } from 'react';
 import Moment from 'react-moment';
 
 import { getTransactionRows, HistoryCardFooter, HistoryCardHeader } from '../HistoryCardComponents';

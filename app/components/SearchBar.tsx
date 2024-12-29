@@ -1,10 +1,11 @@
 'use client';
 
+import React, { useId } from 'react';
 import { useCluster } from '@providers/cluster';
 import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import bs58 from 'bs58';
 import { useRouter, useSearchParams } from 'next/navigation';
-import React, { useId } from 'react';
 import { Search } from 'react-feather';
 import { ActionMeta, InputActionMeta, ValueType } from 'react-select';
 import AsyncSelect from 'react-select/async';
@@ -47,7 +48,7 @@ export function SearchBar() {
     };
 
     async function performSearch(search: string): Promise<SearchOptions[]> {
-        const localOptions = buildOptions(search, cluster, clusterInfo?.epochInfo.epoch);
+        const localOptions = buildOptions(search, cluster.cluster, clusterInfo?.epochInfo.epoch);
         let tokenOptions;
         try {
             tokenOptions = await buildTokenOptions(search, cluster);
@@ -56,7 +57,9 @@ export function SearchBar() {
         }
         const tokenOptionsAppendable = tokenOptions ? [tokenOptions] : [];
         const domainOptions =
-            hasDomainSyntax(search) && cluster === Cluster.MainnetBeta ? (await buildDomainOptions(search)) ?? [] : [];
+            hasDomainSyntax(search) && cluster.cluster === ClusterType.MainnetBeta
+                ? (await buildDomainOptions(search)) ?? []
+                : [];
 
         return [...localOptions, ...tokenOptionsAppendable, ...domainOptions];
     }
@@ -100,9 +103,9 @@ export function SearchBar() {
     );
 }
 
-function buildProgramOptions(search: string, cluster: Cluster) {
+function buildProgramOptions(search: string, cluster: string) {
     const matchedPrograms = Object.entries(PROGRAM_INFO_BY_ID).filter(([address, { name, deployments }]) => {
-        if (!deployments.includes(cluster)) return false;
+        if (deployments && !deployments.includes(cluster)) return false;
         return name.toLowerCase().includes(search.toLowerCase()) || address.includes(search);
     });
 
@@ -216,7 +219,7 @@ async function buildDomainOptions(search: string) {
 }
 
 // builds local search options
-function buildOptions(rawSearch: string, cluster: Cluster, currentEpoch?: bigint) {
+function buildOptions(rawSearch: string, cluster: string, currentEpoch?: bigint) {
     const search = rawSearch.trim();
     if (search.length === 0) return [];
 

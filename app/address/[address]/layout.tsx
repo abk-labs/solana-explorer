@@ -1,5 +1,6 @@
 'use client';
 
+import React, { PropsWithChildren, Suspense, useMemo } from 'react';
 import { AddressLookupTableAccountSection } from '@components/account/address-lookup-table/AddressLookupTableAccountSection';
 import { isAddressLookupTableAccount } from '@components/account/address-lookup-table/types';
 import { ConfigAccountSection } from '@components/account/ConfigAccountSection';
@@ -42,7 +43,6 @@ import { useClusterPath } from '@utils/url';
 import { MetadataPointer, TokenMetadata } from '@validators/accounts/token-extension';
 import Link from 'next/link';
 import { redirect, useSelectedLayoutSegment } from 'next/navigation';
-import React, { PropsWithChildren, Suspense, useMemo } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { create } from 'superstruct';
 import useSWRImmutable from 'swr/immutable';

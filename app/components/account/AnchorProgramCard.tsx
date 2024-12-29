@@ -1,12 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { useAnchorProgram } from '@providers/anchor';
 import { useCluster } from '@providers/cluster';
-import { useState } from 'react';
 import ReactJson from 'react-json-view';
 
 import { getIdlSpecType } from '@/app/utils/convertLegacyIdl';
-
 import { DownloadableButton } from '../common/Downloadable';
 import { IDLBadge } from '../common/IDLBadge';
 

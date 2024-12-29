@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useMemo } from 'react';
 import { Address } from '@components/common/Address';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -11,16 +12,16 @@ import { FetchStatus } from '@providers/cache';
 import { useCluster } from '@providers/cluster';
 import { ParsedInstruction, ParsedTransactionWithMeta, PartiallyDecodedInstruction, PublicKey } from '@solana/web3.js';
 import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import { normalizeTokenAmount } from '@utils/index';
 import { InstructionContainer } from '@utils/instruction';
-import React, { useMemo } from 'react';
 import Moment from 'react-moment';
 import { create } from 'superstruct';
 import useSWR from 'swr';
 
 import { getTokenInfo, getTokenInfoSwrKey } from '@/app/utils/token-info';
-
 import { getTransactionRows, HistoryCardFooter, HistoryCardHeader } from '../HistoryCardComponents';
+
 import { extractMintDetails, MintDetails } from './common';
 
 type IndexedTransfer = {
@@ -30,7 +31,7 @@ type IndexedTransfer = {
 };
 
 async function fetchTokenInfo([_, address, cluster, url]: ['get-token-info', string, Cluster, string]) {
-    return await getTokenInfo(new PublicKey(address), cluster, url)
+    return await getTokenInfo(new PublicKey(address), cluster, url);
 }
 
 export function TokenTransfersCard({ address }: { address: string }) {
@@ -229,7 +230,7 @@ function getTransfer(
                 return create(instruction.parsed.info, Transfer);
             }
         } catch (error) {
-            if (cluster === Cluster.MainnetBeta) {
+            if (cluster.cluster === ClusterType.MainnetBeta) {
                 console.error(error, {
                     signature,
                 });

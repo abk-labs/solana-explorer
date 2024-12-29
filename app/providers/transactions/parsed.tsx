@@ -1,11 +1,11 @@
 'use client';
 
+import React from 'react';
 import * as Cache from '@providers/cache';
 import { ActionType, FetchStatus } from '@providers/cache';
 import { useCluster } from '@providers/cluster';
 import { Connection, ParsedTransactionWithMeta, TransactionSignature } from '@solana/web3.js';
 import { Cluster } from '@utils/cluster';
-import React from 'react';
 
 export interface Details {
     transactionWithMeta?: ParsedTransactionWithMeta | null;
@@ -50,9 +50,8 @@ async function fetchDetails(dispatch: Dispatch, signature: TransactionSignature,
         });
         fetchStatus = FetchStatus.Fetched;
     } catch (error) {
-        if (cluster !== Cluster.Custom) {
-            console.error(error, { url });
-        }
+        console.error(error, { url });
+
         fetchStatus = FetchStatus.FetchFailed;
     }
     dispatch({

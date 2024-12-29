@@ -1,9 +1,9 @@
 'use client';
 
+import React from 'react';
 import { ConcurrentMerkleTreeCard } from '@components/account/ConcurrentMerkleTreeCard';
 import { ParsedAccountRenderer } from '@components/account/ParsedAccountRenderer';
 import { PROGRAM_ID } from '@solana/spl-account-compression';
-import React from 'react';
 
 type Props = Readonly<{
     params: {

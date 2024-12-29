@@ -1,9 +1,10 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { SolBalance } from '@components/common/SolBalance';
 import { ParsedInstruction, SignatureResult, SystemProgram } from '@solana/web3.js';
-import React from 'react';
 
 import { InstructionCard } from '../InstructionCard';
+
 import { TransferInfo } from './types';
 
 export function TransferDetailsCard(props: {
@@ -47,7 +48,7 @@ export function TransferDetailsCard(props: {
             </tr>
 
             <tr>
-                <td>Transfer Amount (SOL)</td>
+                <td>Transfer Amount (ZUMA)</td>
                 <td className="text-lg-end">
                     <SolBalance lamports={info.lamports} />
                 </td>

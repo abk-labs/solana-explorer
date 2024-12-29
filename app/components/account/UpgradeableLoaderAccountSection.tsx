@@ -1,3 +1,4 @@
+import React from 'react';
 import { UnknownAccountCard } from '@components/account/UnknownAccountCard';
 import { Address } from '@components/common/Address';
 import { DownloadableIcon } from '@components/common/Downloadable';
@@ -9,6 +10,7 @@ import { TableCardBody } from '@components/common/TableCardBody';
 import { Account, useFetchAccountInfo } from '@providers/accounts';
 import { useCluster } from '@providers/cluster';
 import { PublicKey } from '@solana/web3.js';
+import { ClusterType } from '@utils/clusterTypes';
 import { addressLabel } from '@utils/tx';
 import {
     ProgramAccountInfo,
@@ -17,13 +19,10 @@ import {
     UpgradeableLoaderAccount,
 } from '@validators/accounts/upgradeable-program';
 import Link from 'next/link';
-import React from 'react';
 import { ExternalLink, RefreshCw } from 'react-feather';
 
 import { useSquadsMultisigLookup } from '@/app/providers/squadsMultisig';
-import { Cluster } from '@/app/utils/cluster';
 import { useClusterPath } from '@/app/utils/url';
-
 import { VerifiedProgramBadge } from '../common/VerifiedProgramBadge';
 
 export function UpgradeableLoaderAccountSection({
@@ -98,7 +97,7 @@ export function UpgradeableProgramSection({
                     </tr>
                 )}
                 <tr>
-                    <td>Balance (SOL)</td>
+                    <td>Balance (ZUMA)</td>
                     <td className="text-lg-end text-uppercase">
                         <SolBalance lamports={account.lamports} />
                     </td>
@@ -146,7 +145,7 @@ export function UpgradeableProgramSection({
                                 <tr>
                                     <td>Upgrade Authority</td>
                                     <td className="text-lg-end">
-                                        {cluster == Cluster.MainnetBeta && squadMapInfo?.isSquad ? (
+                                        {cluster.cluster == ClusterType.MainnetBeta && squadMapInfo?.isSquad ? (
                                             <MultisigBadge pubkey={account.pubkey} />
                                         ) : null}
                                         <Address pubkey={programData.authority} alignRight link />
@@ -224,7 +223,7 @@ export function UpgradeableProgramDataSection({
                     </td>
                 </tr>
                 <tr>
-                    <td>Balance (SOL)</td>
+                    <td>Balance (ZUMA)</td>
                     <td className="text-lg-end text-uppercase">
                         <SolBalance lamports={account.lamports} />
                     </td>
@@ -288,7 +287,7 @@ export function UpgradeableProgramBufferSection({
                     </td>
                 </tr>
                 <tr>
-                    <td>Balance (SOL)</td>
+                    <td>Balance (ZUMA)</td>
                     <td className="text-lg-end text-uppercase">
                         <SolBalance lamports={account.lamports} />
                     </td>

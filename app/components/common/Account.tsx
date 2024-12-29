@@ -1,6 +1,6 @@
+import React from 'react';
 import { SolBalance } from '@components/common/SolBalance';
 import { Account } from '@providers/accounts';
-import React from 'react';
 import { RefreshCw } from 'react-feather';
 
 import { Address } from './Address';
@@ -41,7 +41,7 @@ export function AccountBalanceRow({ account }: AccountProps) {
     const { lamports } = account;
     return (
         <tr>
-            <td>Balance (SOL)</td>
+            <td>Balance (ZUMA)</td>
             <td className="text-lg-end text-uppercase">
                 <SolBalance lamports={lamports} />
             </td>

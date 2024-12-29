@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { Epoch } from '@components/common/Epoch';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -9,7 +10,6 @@ import { useFetchRewards, useRewards } from '@providers/accounts/rewards';
 import { FetchStatus } from '@providers/cache';
 import { PublicKey } from '@solana/web3.js';
 import { lamportsToSolString } from '@utils/index';
-import React from 'react';
 
 const U64_MAX = BigInt('0xffffffffffffffff');
 

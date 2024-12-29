@@ -1,8 +1,8 @@
+import React, { Suspense } from 'react';
 import { InfoTooltip } from '@components/common/InfoTooltip';
 import { LoadingArtPlaceholder } from '@components/common/LoadingArtPlaceholder';
 import { NFTImageContent } from '@components/common/NFTArt';
 import { Account } from '@providers/accounts';
-import React, { Suspense } from 'react';
 
 import { parseNFTokenCollectionAccount, parseNFTokenNFTAccount } from './isNFTokenAccount';
 import { useNftokenMetadata } from './nftoken-hooks';

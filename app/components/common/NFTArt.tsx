@@ -1,12 +1,13 @@
+import { useState } from 'react';
 import { Stream } from '@cloudflare/stream-react';
 import { LoadingArtPlaceholder } from '@components/common/LoadingArtPlaceholder';
-import ErrorLogo from '@img/logos-solana/dark-solana-logo.svg';
 import { MetadataJson, MetaDataJsonCategory, MetadataJsonFile } from '@metaplex/js';
 import { PublicKey } from '@solana/web3.js';
 import { getLast } from '@utils/index';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+
+import ErrorLogo from '@img/logos-solana/dark-solana-logo.svg';
 
 export const MAX_TIME_LOADING_IMAGE = 5000; /* 5 seconds */
 

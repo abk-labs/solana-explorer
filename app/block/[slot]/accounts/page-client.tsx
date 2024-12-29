@@ -1,11 +1,11 @@
 'use client';
 
+import React from 'react';
 import { BlockAccountsCard } from '@components/block/BlockAccountsCard';
 import { useBlock, useFetchBlock } from '@providers/block';
 import { useCluster } from '@providers/cluster';
 import { ClusterStatus } from '@utils/cluster';
 import { notFound } from 'next/navigation';
-import React from 'react';
 
 type Props = Readonly<{ params: { slot: string } }>;
 

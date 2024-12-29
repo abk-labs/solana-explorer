@@ -1,12 +1,12 @@
 'use client';
 
+import React from 'react';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { StatsNotReady } from '@components/StatsNotReady';
 import { ClusterStatsStatus, PERF_UPDATE_SEC, usePerformanceInfo } from '@providers/stats/solanaClusterStats';
 import { PerformanceInfo } from '@providers/stats/solanaPerformanceInfo';
 import { BarElement, CategoryScale, Chart, ChartData, ChartOptions, LinearScale, Tooltip } from 'chart.js';
 import classNames from 'classnames';
-import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import CountUp from 'react-countup';
 
@@ -73,6 +73,7 @@ const TPS_CHART_OPTIONS = (historyMaxTps: number): ChartOptions<'bar'> => {
         },
         plugins: {
             tooltip: {
+                displayColors: true,
                 enabled: false, // Disable the on-canvas tooltip
                 external(context) {
                     // Tooltip Element
@@ -124,6 +125,7 @@ const TPS_CHART_OPTIONS = (historyMaxTps: number): ChartOptions<'bar'> => {
                 intersect: false,
             },
         },
+
         resizeDelay: 0,
         scales: {
             x: {
@@ -169,16 +171,17 @@ function TpsBarChart({ performanceInfo, series, setSeries }: TpsBarChartProps) {
 
     const seriesLength = seriesData.length;
     const chartData: ChartData<'bar'> = {
+        // TODO: Pull color from theme
         datasets: [
             {
-                backgroundColor: '#00D192',
+                backgroundColor: '#3DA8F5',
                 borderWidth: 0,
                 data: seriesData.map(val => val || 0),
-                hoverBackgroundColor: '#00D192',
+                hoverBackgroundColor: '#34B2C9',
             },
         ],
         labels: seriesData.map((val, i) => {
-            return `${SERIES_INFO[series].label(seriesLength - i)}min ago`;
+            return `${SERIES_INFO[series].label(seriesLength - i)} min ago`;
         }),
     };
 

@@ -1,10 +1,10 @@
 'use client';
 
+import React from 'react';
 import * as Cache from '@providers/cache';
 import { useCluster } from '@providers/cluster';
 import { Connection } from '@solana/web3.js';
 import { Cluster } from '@utils/cluster';
-import React from 'react';
 
 import { EpochSchedule, getFirstSlotInEpoch, getLastSlotInEpoch } from '../utils/epoch-schedule';
 
@@ -112,9 +112,8 @@ export async function fetchEpoch(
         status = FetchStatus.Fetched;
     } catch (err) {
         status = FetchStatus.FetchFailed;
-        if (cluster !== Cluster.Custom) {
-            console.error(err, { epoch: epoch.toString() });
-        }
+
+        console.error(err, { epoch: epoch.toString() });
     }
 
     dispatch({

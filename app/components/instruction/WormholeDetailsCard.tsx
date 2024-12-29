@@ -1,6 +1,6 @@
+import React from 'react';
 import { useCluster } from '@providers/cluster';
 import { SignatureResult, TransactionInstruction } from '@solana/web3.js';
-import React from 'react';
 
 import { InstructionCard } from './InstructionCard';
 import { parsWormholeInstructionTitle } from './wormhole/types';

@@ -1,8 +1,8 @@
+import React from 'react';
 import { Address } from '@components/common/Address';
 import { PublicKey, VersionedBlockResponse } from '@solana/web3.js';
 import { useClusterPath } from '@utils/url';
 import Link from 'next/link';
-import React from 'react';
 
 type AccountStats = {
     reads: number;

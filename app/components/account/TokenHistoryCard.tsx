@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useCallback } from 'react';
 import { Address } from '@components/common/Address';
 import { ErrorCard } from '@components/common/ErrorCard';
 import { LoadingCard } from '@components/common/LoadingCard';
@@ -20,12 +21,12 @@ import { useCluster } from '@providers/cluster';
 import { Details, useFetchTransactionDetails, useTransactionDetailsCache } from '@providers/transactions/parsed';
 import { ConfirmedSignatureInfo, ParsedInstruction, PartiallyDecodedInstruction, PublicKey } from '@solana/web3.js';
 import { Cluster } from '@utils/cluster';
+import { ClusterType } from '@utils/clusterTypes';
 import { INNER_INSTRUCTIONS_START_SLOT } from '@utils/index';
 import { getTokenProgramInstructionName } from '@utils/instruction';
 import { displayAddress, intoTransactionInstruction } from '@utils/tx';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-import React, { useCallback } from 'react';
 import { ChevronDown, MinusSquare, PlusSquare, RefreshCw } from 'react-feather';
 
 const TRUNCATE_TOKEN_LENGTH = 10;
@@ -298,9 +299,7 @@ const FilterDropdown = ({ filter, toggle, show, tokens }: FilterProps) => {
                             className={`dropdown-item${filterOption === filter ? ' active' : ''}`}
                             onClick={toggle}
                         >
-                            {filterOption === ALL_TOKENS
-                                ? 'All Tokens'
-                                : nameLookup.get(filterOption) || filterOption}
+                            {filterOption === ALL_TOKENS ? 'All Tokens' : nameLookup.get(filterOption) || filterOption}
                         </Link>
                     );
                 })}
@@ -375,7 +374,8 @@ const TokenTransactionRow = React.memo(function TokenTransactionRow({
 
                 if (
                     transactionWithMeta.meta?.innerInstructions &&
-                    (cluster !== Cluster.MainnetBeta || transactionWithMeta.slot >= INNER_INSTRUCTIONS_START_SLOT)
+                    (cluster.cluster !== ClusterType.MainnetBeta ||
+                        transactionWithMeta.slot >= INNER_INSTRUCTIONS_START_SLOT)
                 ) {
                     transactionWithMeta.meta.innerInstructions.forEach(ix => {
                         if (ix.index === index) {

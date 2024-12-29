@@ -1,3 +1,4 @@
+import React, { Fragment, ReactNode, useState } from 'react';
 import { Address } from '@components/common/Address';
 import { BorshInstructionCoder, Idl, Program } from '@coral-xyz/anchor';
 import { IdlDefinedFields } from '@coral-xyz/anchor/dist/cjs/idl';
@@ -7,7 +8,6 @@ import { PublicKey, TransactionInstruction } from '@solana/web3.js';
 import { Cluster } from '@utils/cluster';
 import { camelToTitleCase, numberWithSeparator, snakeToTitleCase } from '@utils/index';
 import { getProgramName } from '@utils/tx';
-import React, { Fragment, ReactNode, useState } from 'react';
 import { ChevronDown, ChevronUp, CornerDownRight } from 'react-feather';
 import ReactJson from 'react-json-view';
 
@@ -399,7 +399,7 @@ function SimpleRow({
     return (
         <tr
             style={{
-                ...(nestingLevel === 0 ? {} : { backgroundColor: '#141816' }),
+                ...(nestingLevel === 0 ? {} : { backgroundColor: '#102A3E' }),
             }}
         >
             <td className="d-flex flex-row">
@@ -432,7 +432,7 @@ export function ExpandableRow({
         <>
             <tr
                 style={{
-                    ...(nestingLevel === 0 ? {} : { backgroundColor: '#141816' }),
+                    ...(nestingLevel === 0 ? {} : { backgroundColor: '#102A3E' }),
                 }}
             >
                 <td className="d-flex flex-row">

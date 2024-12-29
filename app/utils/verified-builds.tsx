@@ -1,11 +1,11 @@
 import { sha256 } from '@noble/hashes/sha256';
 import { Connection, PublicKey } from '@solana/web3.js';
+import { ClusterType } from '@utils/clusterTypes';
 import useSWRImmutable from 'swr/immutable';
 
 import { useAnchorProgram } from '../providers/anchor';
 import { useCluster } from '../providers/cluster';
 import { ProgramDataAccountInfo } from '../validators/accounts/upgradeable-program';
-import { Cluster } from './cluster';
 
 const OSEC_REGISTRY_URL = 'https://verify.osec.io';
 const VERIFY_PROGRAM_ID = 'verifycLy8mB96wd9wqq3WDXQwM4oU6r42Th37Db9fC';
@@ -197,7 +197,7 @@ function useEnrichedOsecInfo({
         // Create command from the args of the verified build PDA
         enrichedOsecInfo.verify_command = coalesceCommandFromPda(programId, pdaData);
     } else {
-        enrichedOsecInfo.verify_command = isMainnet(cluster)
+        enrichedOsecInfo.verify_command = isMainnet(cluster.cluster)
             ? 'Program does not have a verify PDA uploaded.'
             : 'Verify command only available on mainnet.';
     }
@@ -219,8 +219,8 @@ function coalesceCommandFromPda(programId: PublicKey, pdaData: any) {
     return verify_command;
 }
 
-function isMainnet(currentCluster: Cluster): boolean {
-    return currentCluster == Cluster.MainnetBeta;
+function isMainnet(clusterType: ClusterType): boolean {
+    return clusterType == ClusterType.MainnetBeta;
 }
 
 // Helper function to hash program data
