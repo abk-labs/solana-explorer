@@ -1,5 +1,7 @@
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 import BlockTransactionsTabClient from './page-client';
 
 type Props = Readonly<{
@@ -11,7 +13,7 @@ type Props = Readonly<{
 export async function generateMetadata({ params: { slot } }: Props): Promise<Metadata> {
     return {
         description: `History of all transactions during block ${slot}`,
-        title: `Block | ${slot} | Zuma`,
+        title: `Block | ${slot} | ${explorerConfig.name}`,
     };
 }
 

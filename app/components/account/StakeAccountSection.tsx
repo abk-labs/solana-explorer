@@ -9,6 +9,8 @@ import { displayTimestampUtc } from '@utils/date';
 import { StakeAccountInfo, StakeAccountType, StakeMeta } from '@validators/accounts/stake';
 import { RefreshCw } from 'react-feather';
 
+import explorerConfig from '@/explorer.config';
+
 const U64_MAX = BigInt('0xffffffffffffffff');
 
 export function StakeAccountSection({
@@ -110,13 +112,13 @@ function OverviewCard({
                     </td>
                 </tr>
                 <tr>
-                    <td>Balance (ZUMA)</td>
+                    <td>Balance ({explorerConfig.symbol})</td>
                     <td className="text-lg-end text-uppercase">
                         <SolBalance lamports={account.lamports} />
                     </td>
                 </tr>
                 <tr>
-                    <td>Rent Reserve (ZUMA)</td>
+                    <td>Rent Reserve ({explorerConfig.symbol})</td>
                     <td className="text-lg-end">
                         <SolBalance lamports={stakeAccount.meta.rentExemptReserve} />
                     </td>
@@ -171,7 +173,7 @@ function DelegationCard({
                 {stake && (
                     <>
                         <tr>
-                            <td>Delegated Stake (ZUMA)</td>
+                            <td>Delegated Stake ({explorerConfig.symbol})</td>
                             <td className="text-lg-end">
                                 <SolBalance lamports={stake.delegation.stake} />
                             </td>
@@ -180,14 +182,14 @@ function DelegationCard({
                         {activation && (
                             <>
                                 <tr>
-                                    <td>Active Stake (ZUMA)</td>
+                                    <td>Active Stake ({explorerConfig.symbol})</td>
                                     <td className="text-lg-end">
                                         <SolBalance lamports={activation.active} />
                                     </td>
                                 </tr>
 
                                 <tr>
-                                    <td>Inactive Stake (ZUMA)</td>
+                                    <td>Inactive Stake ({explorerConfig.symbol})</td>
                                     <td className="text-lg-end">
                                         <SolBalance lamports={activation.inactive} />
                                     </td>

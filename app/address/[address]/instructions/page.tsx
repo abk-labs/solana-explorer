@@ -2,6 +2,8 @@ import { TokenInstructionsCard } from '@components/account/history/TokenInstruct
 import getReadableTitleFromAddress, { AddressPageMetadataProps } from '@utils/get-readable-title-from-address';
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 type Props = Readonly<{
     params: {
         address: string;
@@ -11,7 +13,7 @@ type Props = Readonly<{
 export async function generateMetadata(props: AddressPageMetadataProps): Promise<Metadata> {
     return {
         description: `A list of transactions that include an instruction involving the token with address ${props.params.address}`,
-        title: `Token Instructions | ${await getReadableTitleFromAddress(props)} | Zuma`,
+        title: `Token Instructions | ${await getReadableTitleFromAddress(props)} | ${explorerConfig.name}`,
     };
 }
 

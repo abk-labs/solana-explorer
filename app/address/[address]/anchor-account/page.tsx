@@ -1,6 +1,8 @@
 import getReadableTitleFromAddress, { AddressPageMetadataProps } from '@utils/get-readable-title-from-address';
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 import AnchorAccountPageClient from './page-client';
 
 type Props = Readonly<{
@@ -12,7 +14,7 @@ type Props = Readonly<{
 export async function generateMetadata(props: AddressPageMetadataProps): Promise<Metadata> {
     return {
         description: `Contents of the Anchor Account at address ${props.params.address}`,
-        title: `Anchor Account Data | ${await getReadableTitleFromAddress(props)} | Zuma`,
+        title: `Anchor Account Data | ${await getReadableTitleFromAddress(props)} | ${explorerConfig.name}`,
     };
 }
 

@@ -15,6 +15,8 @@ import {
 import { microLamportsToLamportsString } from '@utils/index';
 import { address } from 'web3js-experimental';
 
+import explorerConfig from '@/explorer.config';
+
 import { InstructionCard } from './InstructionCard';
 
 export function ComputeBudgetDetailsCard({
@@ -67,7 +69,7 @@ export function ComputeBudgetDetailsCard({
                         </tr>
 
                         <tr>
-                            <td>Additional Fee (ZUMA)</td>
+                            <td>Additional Fee ({explorerConfig.symbol})</td>
                             <td className="text-lg-end">
                                 <SolBalance lamports={additionalFee} />
                             </td>

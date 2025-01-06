@@ -4,6 +4,7 @@ import { Copyable } from '@components/common/Copyable';
 import { SolBalance } from '@components/common/SolBalance';
 import { ParsedInstruction, SignatureResult, SystemProgram } from '@solana/web3.js';
 
+import explorerConfig from '@/explorer.config';
 import { InstructionCard } from '../InstructionCard';
 
 import { TransferWithSeedInfo } from './types';
@@ -56,7 +57,7 @@ export function TransferWithSeedDetailsCard(props: {
             </tr>
 
             <tr>
-                <td>Transfer Amount (ZUMA)</td>
+                <td>Transfer Amount ({explorerConfig.symbol})</td>
                 <td className="text-lg-end">
                     <SolBalance lamports={info.lamports} />
                 </td>

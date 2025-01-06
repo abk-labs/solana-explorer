@@ -2,6 +2,8 @@ import { TransactionHistoryCard } from '@components/account/history/TransactionH
 import getReadableTitleFromAddress, { AddressPageMetadataProps } from '@utils/get-readable-title-from-address';
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 type Props = Readonly<{
     params: {
         address: string;
@@ -11,7 +13,7 @@ type Props = Readonly<{
 export async function generateMetadata(props: AddressPageMetadataProps): Promise<Metadata> {
     return {
         description: `History of all transactions involving the address ${props.params.address}`,
-        title: `Transaction History | ${await getReadableTitleFromAddress(props)} | Zuma`,
+        title: `Transaction History | ${await getReadableTitleFromAddress(props)} | ${explorerConfig.name}`,
     };
 }
 

@@ -3,6 +3,7 @@ import { Address } from '@components/common/Address';
 import { SolBalance } from '@components/common/SolBalance';
 import { ParsedInstruction, SignatureResult, StakeProgram } from '@solana/web3.js';
 
+import explorerConfig from '@/explorer.config';
 import { InstructionCard } from '../InstructionCard';
 
 import { SplitInfo } from './types';
@@ -55,7 +56,7 @@ export function SplitDetailsCard(props: {
             </tr>
 
             <tr>
-                <td>Split Amount (ZUMA)</td>
+                <td>Split Amount ({explorerConfig.symbol})</td>
                 <td className="text-lg-end">
                     <SolBalance lamports={info.lamports} />
                 </td>

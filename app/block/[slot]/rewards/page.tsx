@@ -1,5 +1,7 @@
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 import BlockRewardsTabClient from './page-client';
 
 type Props = Readonly<{
@@ -11,7 +13,7 @@ type Props = Readonly<{
 export async function generateMetadata({ params: { slot } }: Props): Promise<Metadata> {
     return {
         description: `List of addresses to which rewards were disbursed during block ${slot}`,
-        title: `Block Rewards | ${slot} | Zuma`,
+        title: `Block Rewards | ${slot} | ${explorerConfig.name}`,
     };
 }
 

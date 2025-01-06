@@ -1,3 +1,5 @@
+import explorerConfig from '@/explorer.config';
+
 import SlotHashesPageClient from './page-client';
 
 type Props = Readonly<{
@@ -8,7 +10,7 @@ type Props = Readonly<{
 
 export const metadata = {
     description: `Hashes of each slot`,
-    title: `Slot Hashes | Zuma`,
+    title: `Slot Hashes | ${explorerConfig.name}`,
 };
 
 export default function SlotHashesPage(props: Props) {

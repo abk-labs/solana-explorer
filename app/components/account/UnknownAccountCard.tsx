@@ -6,6 +6,8 @@ import { Account } from '@providers/accounts';
 import { useCluster } from '@providers/cluster';
 import { addressLabel } from '@utils/tx';
 
+import explorerConfig from '@/explorer.config';
+
 export function UnknownAccountCard({ account }: { account: Account }) {
     const { cluster } = useCluster();
 
@@ -30,7 +32,7 @@ export function UnknownAccountCard({ account }: { account: Account }) {
                     </tr>
                 )}
                 <tr>
-                    <td>Balance (ZUMA)</td>
+                    <td>Balance ({explorerConfig.symbol})</td>
                     <td className="text-lg-end">
                         {account.lamports === 0 ? 'Account does not exist' : <SolBalance lamports={account.lamports} />}
                     </td>

@@ -11,6 +11,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { ChevronDown } from 'react-feather';
 import useAsyncEffect from 'use-async-effect';
 
+import explorerConfig from '@/explorer.config';
 import { percentage } from '../utils/math';
 
 type Filter = 'circulating' | 'nonCirculating' | 'all' | null;
@@ -92,7 +93,7 @@ export function TopAccountsCard() {
                                 <tr>
                                     <th className="text-muted">Rank</th>
                                     <th className="text-muted">Address</th>
-                                    <th className="text-muted text-end">Balance (ZUMA)</th>
+                                    <th className="text-muted text-end">Balance ({explorerConfig.symbol})</th>
                                     <th className="text-muted text-end">% of {header} Supply</th>
                                 </tr>
                             </thead>

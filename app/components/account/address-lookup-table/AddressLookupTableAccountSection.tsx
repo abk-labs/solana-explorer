@@ -8,6 +8,8 @@ import { AddressLookupTableAccount } from '@solana/web3.js';
 import { AddressLookupTableAccountInfo } from '@validators/accounts/address-lookup-table';
 import { RefreshCw } from 'react-feather';
 
+import explorerConfig from '@/explorer.config';
+
 export function AddressLookupTableAccountSection(
     params:
         | {
@@ -50,7 +52,7 @@ export function AddressLookupTableAccountSection(
                     </td>
                 </tr>
                 <tr>
-                    <td>Balance (ZUMA)</td>
+                    <td>Balance ({explorerConfig.symbol})</td>
                     <td className="text-lg-end text-uppercase">
                         <SolBalance lamports={account.lamports} />
                     </td>
