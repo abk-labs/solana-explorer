@@ -1,12 +1,14 @@
 import getReadableTitleFromAddress, { AddressPageMetadataProps } from '@utils/get-readable-title-from-address';
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 import SecurityPageClient from './page-client';
 
 export async function generateMetadata(props: AddressPageMetadataProps): Promise<Metadata> {
     return {
         description: `Contents of the security.txt for the program with address ${props.params.address}`,
-        title: `Security | ${await getReadableTitleFromAddress(props)} | Zuma`,
+        title: `Security | ${await getReadableTitleFromAddress(props)} | ${explorerConfig.name}`,
     };
 }
 

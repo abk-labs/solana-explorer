@@ -23,6 +23,7 @@ import { ExternalLink, RefreshCw } from 'react-feather';
 
 import { useSquadsMultisigLookup } from '@/app/providers/squadsMultisig';
 import { useClusterPath } from '@/app/utils/url';
+import explorerConfig from '@/explorer.config';
 import { VerifiedProgramBadge } from '../common/VerifiedProgramBadge';
 
 export function UpgradeableLoaderAccountSection({
@@ -97,7 +98,7 @@ export function UpgradeableProgramSection({
                     </tr>
                 )}
                 <tr>
-                    <td>Balance (ZUMA)</td>
+                    <td>Balance ({explorerConfig.symbol})</td>
                     <td className="text-lg-end text-uppercase">
                         <SolBalance lamports={account.lamports} />
                     </td>
@@ -223,7 +224,7 @@ export function UpgradeableProgramDataSection({
                     </td>
                 </tr>
                 <tr>
-                    <td>Balance (ZUMA)</td>
+                    <td>Balance ({explorerConfig.symbol})</td>
                     <td className="text-lg-end text-uppercase">
                         <SolBalance lamports={account.lamports} />
                     </td>
@@ -287,7 +288,7 @@ export function UpgradeableProgramBufferSection({
                     </td>
                 </tr>
                 <tr>
-                    <td>Balance (ZUMA)</td>
+                    <td>Balance ({explorerConfig.symbol})</td>
                     <td className="text-lg-end text-uppercase">
                         <SolBalance lamports={account.lamports} />
                     </td>

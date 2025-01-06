@@ -1,5 +1,7 @@
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 import EpochDetailsPageClient from './page-client';
 
 type Props = Readonly<{
@@ -11,7 +13,7 @@ type Props = Readonly<{
 export async function generateMetadata({ params: { epoch } }: Props): Promise<Metadata> {
     return {
         description: `Summary of ${epoch}`,
-        title: `Epoch | ${epoch} | Zuma`,
+        title: `Epoch | ${epoch} | ${explorerConfig.name}`,
     };
 }
 

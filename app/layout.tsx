@@ -11,10 +11,12 @@ import type { Viewport } from 'next';
 import { Nunito } from 'next/font/google';
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 export const metadata: Metadata = {
-    description: 'Inspect transactions, accounts, blocks, and more on the Zuma SVM blockchain',
+    description: `Inspect transactions, accounts, blocks, and more on the ${explorerConfig.name} SVM blockchain`,
     manifest: '/manifest.json',
-    title: 'Explorer  | Zuma',
+    title: `Explorer  | ${explorerConfig.name}`,
 };
 
 export const viewport: Viewport = {

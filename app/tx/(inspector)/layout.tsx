@@ -1,6 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 type Props = Readonly<{
     children: React.ReactNode;
     params: Readonly<{
@@ -12,12 +14,12 @@ export async function generateMetadata({ params: { signature } }: Props): Promis
     if (signature) {
         return {
             description: `Interactively inspect the Solana transaction with signature ${signature}`,
-            title: `Transaction Inspector | ${signature} | Zuma`,
+            title: `Transaction Inspector | ${signature} | ${explorerConfig.name}`,
         };
     } else {
         return {
             description: `Interactively inspect Solana transactions`,
-            title: `Transaction Inspector | Zuma`,
+            title: `Transaction Inspector | ${explorerConfig.name}`,
         };
     }
 }

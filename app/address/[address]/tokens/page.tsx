@@ -4,6 +4,7 @@ import getReadableTitleFromAddress, { AddressPageMetadataProps } from '@utils/ge
 import { Metadata } from 'next/types';
 
 import { TransactionsProvider } from '@/app/providers/transactions';
+import explorerConfig from '@/explorer.config';
 
 type Props = Readonly<{
     params: {
@@ -14,7 +15,7 @@ type Props = Readonly<{
 export async function generateMetadata(props: AddressPageMetadataProps): Promise<Metadata> {
     return {
         description: `All tokens owned by the address ${props.params.address}`,
-        title: `Tokens | ${await getReadableTitleFromAddress(props)} | Zuma`,
+        title: `Tokens | ${await getReadableTitleFromAddress(props)} | ${explorerConfig.name}`,
     };
 }
 

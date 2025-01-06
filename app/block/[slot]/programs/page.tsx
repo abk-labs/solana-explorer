@@ -1,5 +1,7 @@
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 import BlockProgramsTabClient from './page-client';
 
 type Props = Readonly<{
@@ -11,7 +13,7 @@ type Props = Readonly<{
 export async function generateMetadata({ params: { slot } }: Props): Promise<Metadata> {
     return {
         description: `Statistics pertaining to programs which were active during block ${slot}`,
-        title: `Programs Active In Block | ${slot} | Zuma`,
+        title: `Programs Active In Block | ${slot} | ${explorerConfig.name}`,
     };
 }
 

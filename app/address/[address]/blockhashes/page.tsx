@@ -1,3 +1,5 @@
+import explorerConfig from '@/explorer.config';
+
 import RecentBlockhashesPageClient from './page-client';
 
 type Props = Readonly<{
@@ -8,7 +10,7 @@ type Props = Readonly<{
 
 export const metadata = {
     description: `Recent blockhashes`,
-    title: `Recent Blockhashes | Zuma`,
+    title: `Recent Blockhashes | ${explorerConfig.name}`,
 };
 
 export default function RecentBlockhashesPage(props: Props) {

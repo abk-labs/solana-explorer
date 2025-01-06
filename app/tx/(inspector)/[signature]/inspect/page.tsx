@@ -1,6 +1,8 @@
 import { TransactionInspectorPage } from '@components/inspector/InspectorPage';
 import { Metadata } from 'next/types';
 
+import explorerConfig from '@/explorer.config';
+
 type Props = Readonly<{
     params: Readonly<{
         signature: string;
@@ -10,7 +12,7 @@ type Props = Readonly<{
 export async function generateMetadata({ params: { signature } }: Props): Promise<Metadata> {
     return {
         description: `Interactively inspect the transaction with signature ${signature}`,
-        title: `Transaction Inspector | ${signature} | Zuma`,
+        title: `Transaction Inspector | ${signature} | ${explorerConfig.name}`,
     };
 }
 

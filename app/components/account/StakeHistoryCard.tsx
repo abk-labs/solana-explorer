@@ -3,6 +3,8 @@ import { Epoch } from '@components/common/Epoch';
 import { SolBalance } from '@components/common/SolBalance';
 import { StakeHistoryEntry, StakeHistoryInfo, SysvarAccount } from '@validators/accounts/sysvar';
 
+import explorerConfig from '@/explorer.config';
+
 export function StakeHistoryCard({ sysvarAccount }: { sysvarAccount: SysvarAccount }) {
     const stakeHistory = sysvarAccount.info as StakeHistoryInfo;
     return (
@@ -21,9 +23,9 @@ export function StakeHistoryCard({ sysvarAccount }: { sysvarAccount: SysvarAccou
                         <thead>
                             <tr>
                                 <th className="w-1 text-muted">Epoch</th>
-                                <th className="text-muted">Effective (ZUMA)</th>
-                                <th className="text-muted">Activating (ZUMA)</th>
-                                <th className="text-muted">Deactivating (ZUMA)</th>
+                                <th className="text-muted">Effective ({explorerConfig.symbol})</th>
+                                <th className="text-muted">Activating ({explorerConfig.symbol})</th>
+                                <th className="text-muted">Deactivating ({explorerConfig.symbol})</th>
                             </tr>
                         </thead>
                         <tbody className="list">

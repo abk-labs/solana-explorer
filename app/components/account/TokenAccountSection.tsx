@@ -44,6 +44,7 @@ import { create } from 'superstruct';
 import useSWR from 'swr';
 
 import { FullLegacyTokenInfo, getTokenInfo, getTokenInfoSwrKey } from '@/app/utils/token-info';
+import explorerConfig from '@/explorer.config';
 
 import { UnknownAccountCard } from './UnknownAccountCard';
 
@@ -475,7 +476,7 @@ function TokenAccountCard({ account, info }: { account: Account; info: TokenAcco
                 </tr>
                 {info.rentExemptReserve && (
                     <tr>
-                        <td>Rent-exempt reserve (ZUMA)</td>
+                        <td>Rent-exempt reserve ({explorerConfig.symbol})</td>
                         <td className="text-lg-end">
                             <>
                                 <span className="font-monospace">

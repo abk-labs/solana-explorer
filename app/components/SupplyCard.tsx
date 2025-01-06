@@ -5,6 +5,8 @@ import { SolBalance } from '@components/common/SolBalance';
 import { TableCardBody } from '@components/common/TableCardBody';
 import { Status, useFetchSupply, useSupply } from '@providers/supply';
 
+import explorerConfig from '@/explorer.config';
+
 export function SupplyCard() {
     const supply = useSupply();
     const fetchSupply = useFetchSupply();
@@ -30,21 +32,21 @@ export function SupplyCard() {
 
             <TableCardBody>
                 <tr>
-                    <td className="w-100">Total Supply (ZUMA)</td>
+                    <td className="w-100">Total Supply ({explorerConfig.symbol})</td>
                     <td className="text-lg-end">
                         <SolBalance lamports={supply.total} maximumFractionDigits={0} />
                     </td>
                 </tr>
 
                 <tr>
-                    <td className="w-100">Circulating Supply (ZUMA)</td>
+                    <td className="w-100">Circulating Supply ({explorerConfig.symbol})</td>
                     <td className="text-lg-end">
                         <SolBalance lamports={supply.circulating} maximumFractionDigits={0} />
                     </td>
                 </tr>
 
                 <tr>
-                    <td className="w-100">Non-Circulating Supply (ZUMA)</td>
+                    <td className="w-100">Non-Circulating Supply ({explorerConfig.symbol})</td>
                     <td className="text-lg-end">
                         <SolBalance lamports={supply.nonCirculating} maximumFractionDigits={0} />
                     </td>

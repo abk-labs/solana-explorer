@@ -37,6 +37,8 @@ import Link from 'next/link';
 import { RefreshCw, Settings } from 'react-feather';
 import useTabVisibility from 'use-tab-visibility';
 
+import explorerConfig from '@/explorer.config';
+
 const AUTO_REFRESH_INTERVAL = 2000;
 const ZERO_CONFIRMATION_BAILOUT = 5;
 
@@ -322,7 +324,7 @@ function StatusCard({ signature, autoRefresh }: SignatureProps & AutoRefreshProp
 
                 {fee !== undefined && (
                     <tr>
-                        <td>Fee (ZUMA)</td>
+                        <td>Fee ({explorerConfig.symbol})</td>
                         <td className="text-lg-end">
                             <SolBalance lamports={fee} />
                         </td>
@@ -444,8 +446,8 @@ function AccountsCard({ signature }: SignatureProps) {
                         <tr>
                             <th className="text-muted">#</th>
                             <th className="text-muted">Address</th>
-                            <th className="text-muted">Change (ZUMA)</th>
-                            <th className="text-muted">Post Balance (ZUMA)</th>
+                            <th className="text-muted">Change ({explorerConfig.symbol})</th>
+                            <th className="text-muted">Post Balance ({explorerConfig.symbol})</th>
                             <th className="text-muted">Details</th>
                         </tr>
                     </thead>

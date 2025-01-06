@@ -3,6 +3,8 @@ import { SolBalance } from '@components/common/SolBalance';
 import { Account } from '@providers/accounts';
 import { RefreshCw } from 'react-feather';
 
+import explorerConfig from '@/explorer.config';
+
 import { Address } from './Address';
 
 type AccountHeaderProps = {
@@ -41,7 +43,7 @@ export function AccountBalanceRow({ account }: AccountProps) {
     const { lamports } = account;
     return (
         <tr>
-            <td>Balance (ZUMA)</td>
+            <td>Balance ({explorerConfig.symbol})</td>
             <td className="text-lg-end text-uppercase">
                 <SolBalance lamports={lamports} />
             </td>
