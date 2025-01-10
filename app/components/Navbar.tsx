@@ -21,7 +21,7 @@ export function Navbar() {
         <nav className="navbar navbar-expand-md navbar-light">
             <div className="container">
                 <Link href={homePath}>
-                    <Image alt="logo" src={logo} width={140} />
+                    <h1 className="logo-header">{explorerConfig.name} Explorer </h1>
                 </Link>
 
                 <button className="navbar-toggler" type="button" onClick={() => setCollapse(value => !value)}>
