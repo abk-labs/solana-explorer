@@ -8,7 +8,8 @@ import { useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/naviga
 
 import { ClusterStatusButton } from './ClusterStatusButton';
 
-import logo from '@img/zuma-full-logo.png';
+import Logo from '@img/logos-solana/light-explorer-logo.svg';
+import explorerConfig from '@/explorer.config';
 
 export function Navbar() {
     // TODO: use `collapsing` to animate collapsible navbar
@@ -22,7 +23,7 @@ export function Navbar() {
         <nav className="navbar navbar-expand-md navbar-light">
             <div className="container">
                 <Link href={homePath}>
-                    <Image alt="logo" src={logo} width={140} />
+                    <h1 class="logo-header">{explorerConfig.name} Explorer </h1>
                 </Link>
 
                 <button className="navbar-toggler" type="button" onClick={() => setCollapse(value => !value)}>
